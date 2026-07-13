@@ -13,8 +13,19 @@ OUTPUT_DIR = PROJECT_ROOT / "output"
 ARCHIVE_DIR = DATA_DIR / "archive"
 TEMPLATE_DIR = PROJECT_ROOT / "generator" / "templates"
 
-# 品牌库路径
-BRAND_LIBRARY_PATH = Path("/workspace/brand_library.json")
+# 品牌库路径（优先环境变量，其次项目根目录，最后 /workspace）
+BRAND_LIBRARY_PATH = Path(os.environ.get("BRAND_LIBRARY_PATH", "")) if os.environ.get("BRAND_LIBRARY_PATH") else None
+if BRAND_LIBRARY_PATH is None:
+    candidates = [
+        PROJECT_ROOT / "brand_library.json",
+        Path("/workspace/brand_library.json"),
+    ]
+    for p in candidates:
+        if p.exists():
+            BRAND_LIBRARY_PATH = p
+            break
+    else:
+        BRAND_LIBRARY_PATH = PROJECT_ROOT / "brand_library.json"  # 兜底
 
 # 事件库路径
 EVENTS_PATH = DATA_DIR / "events.json"
