@@ -4,8 +4,11 @@ on:
   schedule:
     # 北京时间每天早上 8:03（UTC 0:03）
     - cron: '3 0 * * *'
-  # 允许手动触发
   workflow_dispatch:
+
+# 赋予 workflow 写入仓库的权限
+permissions:
+  contents: write
 
 jobs:
   daily-report:
@@ -15,6 +18,8 @@ jobs:
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
 
       - name: 设置 Python
         uses: actions/setup-python@v5
