@@ -1,0 +1,45 @@
+name: 三品王每日日报
+
+on:
+  schedule:
+    # 北京时间每天早上 8:03（UTC 0:03）
+    - cron: '3 0 * * *'
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  daily-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行日报
+        env:
+          DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          python scheduler/daily_job.py --date $(date +%Y-%m-%d)
+
+      - name: 提交日报到仓库
+        run: |
+          git config user.name "Sanpin Daily Bot"
+          git config user.email "bot@sanpin-daily.local"
+          git add report/ index.html serve/ data/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "没有新内容"
+          else
+            git commit -m "日报 $(date +%Y-%m-%d) [auto]"
+            git push
+          fi
