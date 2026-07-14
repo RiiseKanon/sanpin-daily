@@ -1,0 +1,401 @@
+<!-- 事件卡片宏 -->
+
+
+<!-- 品牌主色调映射 -->
+
+
+<!-- 类别图标映射 -->
+
+
+<!-- 行业趋势图片匹配 -->
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三品王每日品牌动态日报 — 2026-07-14</title>
+<style>
+  /* === 框架样式变量（来自 config.REPORT_CARD_STYLE_SPEC） === */
+  :root {
+    --container-w: 430px;
+    --container-pad: 12px;
+    --card-head-h: 120px;
+    --card-head-pad: 12px;
+    --bg-size: cover;
+    --bg-blur: 1.5px;
+    --overlay: rgba(0,0,0,0.3);
+    --brand-fs: 16px;
+    --brand-maxw: calc(100% - 80px);
+    --title-fs: 14px;
+    --text-color: white;
+    --text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5; color: #333; line-height: 1.6;
+    max-width: var(--container-w); margin: 0 auto; padding: var(--container-pad);
+  }
+  .header {
+    background: linear-gradient(135deg, #d4380d, #e8740c);
+    color: white; padding: 24px; border-radius: 12px; margin-bottom: 16px;
+    text-align: center;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .header .date { font-size: 14px; opacity: 0.9; }
+  .header .stats {
+    display: flex; justify-content: center; gap: 16px; margin-top: 12px;
+    font-size: 13px; flex-wrap: wrap;
+  }
+  .header .stats span { background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 10px; }
+
+  .section {
+    background: white; border-radius: 12px; margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden;
+  }
+  .section-header {
+    padding: 16px 20px; border-bottom: 1px solid #f0f0f0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-header .icon { font-size: 24px; }
+  .section-header h2 { font-size: 17px; font-weight: 600; }
+  .section-header .rating-badge {
+    font-size: 12px; padding: 2px 8px; border-radius: 4px;
+    background: #f0f0f0; color: #666;
+  }
+  .section-body { padding: 16px 20px; }
+
+  .empty-state {
+    text-align: center; padding: 20px; color: #999; font-size: 14px;
+  }
+
+  /* === 事件卡片 v3 — 背景图覆盖头部全区域 === */
+  .event-card {
+    width: 100%;
+    background: white; border-radius: 10px; margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden;
+  }
+  .event-card:last-child { margin-bottom: 0; }
+
+  /* 卡片头部（背景图覆盖：品牌名 + 标签 + 标题）— 固定高度，所有卡片一致 */
+  .card-head {
+    position: relative; box-sizing: border-box;
+    padding: var(--card-head-pad);
+    height: var(--card-head-h); display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+  .card-head::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: var(--bg-image, none);
+    background-size: var(--bg-size);
+    background-position: var(--bg-position, top);
+    background-repeat: no-repeat;
+    filter: blur(var(--bg-blur));
+    z-index: 0;
+  }
+  .card-head-overlay {
+    position: absolute; inset: 0;
+    background: var(--overlay);
+    z-index: 1;
+  }
+  .card-head-content {
+    position: relative; z-index: 2; width: 100%;
+  }
+
+  /* 品牌名（单行截断） */
+  .card-brand-row {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .card-brand-name {
+    font-size: var(--brand-fs); font-weight: 700; color: var(--text-color);
+    text-shadow: var(--text-shadow); max-width: var(--brand-maxw);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-circle-badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 4px;
+    background: rgba(255,255,255,0.25); color: white; font-weight: 500;
+    backdrop-filter: blur(4px);
+  }
+  .circle-核心竞品 { background: rgba(212,107,8,0.5); }
+  .circle-区域竞品 { background: rgba(24,144,255,0.5); }
+  .circle-场景竞品 { background: rgba(56,158,13,0.5); }
+  .circle-替代竞品 { background: rgba(114,46,209,0.5); }
+  .circle-自身品牌 { background: rgba(212,136,6,0.5); }
+
+  /* 标签行（单行，不换行） */
+  .card-tags-row {
+    display: flex; align-items: center; gap: 6px; margin-bottom: 5px;
+    flex-wrap: nowrap; overflow: hidden;
+  }
+  .card-cat-icon { font-size: 13px; flex-shrink: 0; }
+  .card-cat-label {
+    font-size: 11px; color: white; background: rgba(255,255,255,0.2);
+    padding: 1px 6px; border-radius: 3px; backdrop-filter: blur(4px);
+    flex-shrink: 0;
+  }
+  .card-status {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600;
+    color: white; backdrop-filter: blur(4px); flex-shrink: 0;
+  }
+  .status-NEW { background: rgba(24,144,255,0.7); }
+  .status-ACTIVE { background: rgba(82,196,26,0.7); }
+  .status-ESCALATED { background: rgba(250,84,28,0.7); }
+  .card-score {
+    font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+    margin-left: auto; backdrop-filter: blur(4px); flex-shrink: 0;
+  }
+  .score-positive { background: rgba(56,158,13,0.6); color: white; }
+  .score-negative { background: rgba(207,19,34,0.6); color: white; }
+  .score-neutral { background: rgba(255,255,255,0.2); color: white; }
+
+  /* 标题（单行截断，不换行） */
+  .card-hero-title {
+    font-size: var(--title-fs); font-weight: 700; color: var(--text-color);
+    line-height: 1.3; text-shadow: var(--text-shadow);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .card-summary {
+    font-size: 13px; color: #555; padding: 12px 16px; line-height: 1.6;
+  }
+  .card-meta {
+    font-size: 12px; color: #999; padding: 0 16px 10px; display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .card-meta a { color: #d4380d; text-decoration: none; font-weight: 500; }
+
+  /* 来源可信度徽章 */
+  .cred-badge {
+    display: inline-flex; align-items: center; gap: 2px;
+    font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .cred-high { background: rgba(56,158,13,0.85); color: #fff; }
+  .cred-mid  { background: rgba(250,173,20,0.92); color: #fff; }
+  .cred-low  { background: rgba(207,19,34,0.85); color: #fff; }
+  .gated-tag {
+    display: inline-block; margin-left: 2px; padding: 0 5px;
+    font-size: 11px; line-height: 16px; border-radius: 4px;
+    background: rgba(0,0,0,0.06); color: #8c8c8c; cursor: help;
+  }
+  .cite-badge {
+    display: inline-block; margin-left: 2px; padding: 0 6px;
+    font-size: 11px; line-height: 16px; border-radius: 4px; cursor: help;
+  }
+  .cite-ok  { background: rgba(56,158,13,0.12); color: #389e0d; border: 1px solid rgba(56,158,13,0.3); }
+  .cite-lead{ background: rgba(0,0,0,0.05); color: #8c8c8c; border: 1px solid rgba(0,0,0,0.12); }
+  .leads-section { border-left: 4px solid #8c8c8c; }
+  .leads-note {
+    margin-bottom: 12px; padding: 10px 12px; font-size: 12px; line-height: 1.5;
+    background: #fffbe6; border: 1px solid #ffe58f; border-radius: 6px; color: #ad6800;
+  }
+  /* 焦点品牌基础资料色块网格（V2.3） */
+  .focus-info-grid {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
+  }
+  .focus-info-item {
+    flex: 1 1 calc(50% - 6px); min-width: 140px; padding: 8px 10px;
+    background: #f5f5f5; border-radius: 6px; font-size: 13px; line-height: 1.4;
+  }
+  .fi-label { display: block; font-size: 11px; color: #8c8c8c; margin-bottom: 2px; }
+  .fi-value { display: block; font-weight: 500; color: #262626; }
+  .tracking-link {
+    margin: 0 16px 10px; padding: 8px 12px;
+    background: #fffbe6; border-radius: 6px; font-size: 12px;
+    color: #d48806; border: 1px solid #ffe58f;
+  }
+  .delta-info {
+    margin: 0 16px 10px; padding: 8px 12px;
+    background: #fff7e6; border-radius: 6px; font-size: 12px; color: #d46b08;
+  }
+
+  /* 排名表格 */
+  .ranking-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  .ranking-table th {
+    background: #fafafa; padding: 10px 12px; text-align: left;
+    font-weight: 600; border-bottom: 2px solid #f0f0f0;
+  }
+  .ranking-table td {
+    padding: 8px 12px; border-bottom: 1px solid #f5f5f5;
+  }
+  .ranking-table .rank-num {
+    width: 32px; height: 24px; display: inline-flex;
+    align-items: center; justify-content: center; border-radius: 4px;
+    font-weight: 700; font-size: 12px;
+  }
+  .rank-1 { background: #fff1b8; color: #d48806; }
+  .rank-2 { background: #f5f5f5; color: #666; }
+  .rank-3 { background: #f5f5f5; color: #666; }
+  .rank-other { color: #999; }
+
+  .ranking-note {
+    margin-top: 12px; padding: 10px 12px; background: #fafafa;
+    border-radius: 6px; font-size: 12px; color: #888;
+    border-left: 3px solid #d9d9d9;
+  }
+  .ranking-failed {
+    padding: 12px; background: #fff2f0; border-radius: 6px;
+    border: 1px solid #ffccc7; color: #cf1322; font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    text-align: center; padding: 16px; font-size: 12px; color: #ccc;
+  }
+</style>
+</head>
+<body>
+
+<!-- 头部 -->
+<div class="header">
+  <h1>🍜 三品王每日品牌动态日报</h1>
+  <div class="date">2026-07-14</div>
+  <div class="stats">
+    <span>📋 事件 0 条</span>
+    <span>🆕 新增 0</span>
+    <span>🔄 追踪 0</span>
+    
+  </div>
+</div>
+
+<!-- Part 1: 自身舆情 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🌟</span>
+    <h2>自身舆情监控</h2>
+    <span class="rating-badge">正向评级 ±5</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="empty-state">今日无自身舆情动态</div>
+    
+  </div>
+</div>
+
+<!-- Part 2: 竞品动态 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">⚔️</span>
+    <h2>竞品动态</h2>
+    <span class="rating-badge">威胁评级 ±5</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="empty-state">今日无竞品重大动态</div>
+    
+  </div>
+</div>
+
+<!-- Part 3: 行业趋势/政策 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📈</span>
+    <h2>行业趋势/政策</h2>
+    <span class="rating-badge">利好评级 ±5</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="empty-state">今日无行业政策动态</div>
+    
+  </div>
+</div>
+
+<!-- 需核实线索（引证分级 V2.2）：与可引证动态分离 -->
+<div class="section leads-section">
+  <div class="section-header">
+    <span class="icon">🔍</span>
+    <h2>需核实线索</h2>
+    <span class="rating-badge" style="background:#8c8c8c;">仅作线索 · 不引证</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="empty-state">今日无不可核实线索</div>
+    
+  </div>
+</div>
+
+<!-- Part 4: 今日焦点品牌 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📖</span>
+    <h2>今日焦点品牌</h2>
+    <span class="rating-badge">固定板块 · 每日轮换</span>
+  </div>
+  <div class="section-body">
+    
+    
+    <div class="event-card" style="border-left:4px solid #d4380d;">
+      <div class="card-header">
+        <span class="category-icon">📖</span>
+        <span class="brand-tag">螺小丰螺蛳粉</span>
+        <span class="circle-tag">核心竞品</span>
+        <span style="font-size:12px;color:#888;">#7 / 43</span>
+      </div>
+      <div class="card-title">螺小丰螺蛳粉 — 竞品深度分析</div>
+
+      <!-- 基础资料：带背景色块的卡片行（V2.3） -->
+      <div class="focus-info-grid">
+        <div class="focus-info-item"><span class="fi-label">品类</span><span class="fi-value">米粉（螺蛳粉）</span></div>
+        <div class="focus-info-item"><span class="fi-label">价格带</span><span class="fi-value">12-18元</span></div>
+        <div class="focus-info-item"><span class="fi-label">门店数</span><span class="fi-value">200+</span></div>
+        <div class="focus-info-item"><span class="fi-label">总部</span><span class="fi-value">柳州</span></div>
+        <div class="focus-info-item"><span class="fi-label">创立</span><span class="fi-value">1979年</span></div>
+        <div class="focus-info-item"><span class="fi-label">主营区域</span><span class="fi-value">全国</span></div>
+        <div class="focus-info-item"><span class="fi-label">置信度</span><span class="fi-value">中</span></div>
+      </div>
+
+      
+      <div style="margin-top:12px;padding:10px;background:#fff7e6;border-radius:6px;font-size:13px;">
+        <strong>⚡ 与三品王重叠维度分析</strong><br>
+        重叠维度: 3/4 (价格带、区域、场景)<br>
+        价格带重叠（12-18元），面向同一消费群体；主营区域重叠（广西），门店覆盖范围存在正面竞争；消费场景一致（到店+外卖双渠道快餐），争夺同一批客流。重叠度 3/4，核心竞品 Level 3。
+      </div>
+      
+
+      
+      <div style="margin-top:12px;padding:10px;background:#f6ffed;border-radius:6px;font-size:13px;">
+        <strong>📊 竞争评估</strong><br>
+        📊 中等威胁：三维重叠。门店数 200+，规模中等，重点监控其区域扩张动态。
+      </div>
+      
+
+      
+      <div style="margin-top:12px;padding:12px;background:linear-gradient(135deg,#f0f5ff,#e6f7ff);border-radius:6px;font-size:13px;line-height:1.7;border:1px solid #d6e4ff;">
+        <strong style="color:#1d39c4;">🤖 AI 竞争态势分析</strong>
+        <div style="margin-top:6px;white-space:pre-line;">螺小丰螺蛳粉创立于1979年，是米粉（螺蛳粉）领域代表性连锁品牌，总部位于柳州，全国门店约200+家，主营全国市场。
+
+经营方式：以加盟连锁模式为主，依托标准化供应链实现快速复制。
+
+出品特点：主打柳州螺蛳粉品类；以米粉为核心产品线；客单价约12-18元，定位大众快餐消费。
+
+背景信息：行业认可：螺蛳粉十大品牌第4，非遗传承。
+
+扩张路径：已从广西向全国扩张。
+
+— 分析基于品牌库数据（规则引擎），仅供参考</div>
+      </div>
+      
+
+      <div class="card-meta" style="margin-top:8px;">
+        <span>📎 数据来源: 品牌库 + AI搜索分析</span>
+        <span>🔄 下次轮换: 43天后</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Part 5: 品牌库变动简报（仅周一） -->
+
+
+<div class="footer">
+  三品王竞品监测系统 · 自动生成于 2026-07-14 · 品牌库 v5.4
+</div>
+
+</body>
+</html>
