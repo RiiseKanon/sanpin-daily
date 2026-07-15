@@ -88,6 +88,12 @@ def run_daily_job(target_date: str = None, dry_run: bool = False):
     raw_items = asyncio.run(run_collection(target_date))
     logger.info(f"采集完成: 共 {len(raw_items)} 条原始条目")
 
+    # Step 3.5: 竞品搜索代理 — 如果竞品动态不足，尝试注入外部搜索结果
+    injected_items = _inject_external_searches(target_date)
+    if injected_items:
+        logger.info(f"注入外部搜索结果: {len(injected_items)} 条")
+        raw_items.extend(injected_items)
+
     # Step 4: 处理流水线
     pipeline = ProcessingPipeline(event_store)
     report = pipeline.process_raw_items(raw_items, target_date)
@@ -135,6 +141,95 @@ def run_daily_job(target_date: str = None, dry_run: bool = False):
     logger.info(f"   事件库状态: {status_counts}")
 
     return report
+
+
+def _inject_external_searches(target_date: str) -> list:
+    """
+    读取外部搜索代理产出的结果文件，注入到采集流水线。
+
+    搜索代理工作流:
+    1. daily_job 运行采集 → 竞品动态不足 → 输出搜索任务文件
+    2. Agent 读取任务文件，使用 WebSearch 批量搜索
+    3. Agent 将搜索结果写入 _search_results.json
+    4. daily_job 重新运行时读取结果文件，注入到 raw_items
+
+    结果文件格式:
+    {
+      "target_date": "2026-07-13",
+      "results": [
+        {
+          "brand_name": "尝不忘", "brand_id": "BR002", "circle": "核心竞品",
+          "title": "...", "url": "...", "summary": "...", "published_at": "...",
+          "category": "渠道/扩张动作"
+        },
+        ...
+      ]
+    }
+    """
+    from collector.base import RawItem
+    result_file = config.DATA_DIR / "_search_results.json"
+    if not result_file.exists():
+        return []
+
+    try:
+        with open(result_file, "r") as f:
+            data = json.load(f)
+    except Exception:
+        return []
+
+    # 验证日期匹配
+    if data.get("target_date") != target_date:
+        logger.info(f"搜索结果日期不匹配（{data.get('target_date')} vs {target_date}），跳过")
+        return []
+
+    items = []
+    for r in data.get("results", []):
+        item = RawItem(
+            source="AI搜索代理",
+            url=r.get("url", ""),
+            title=r.get("title", ""),
+            content=r.get("summary", ""),
+            published_at=r.get("published_at", target_date),
+            brand_name=r.get("brand_name", ""),
+            brand_id=r.get("brand_id", ""),
+            circle=r.get("circle", ""),
+            category=r.get("category", "行业趋势/政策"),
+            keywords=r.get("keywords", []),
+            metadata={"query": r.get("brand_name", ""), "source_type": "ai_websearch"},
+        )
+        items.append(item)
+
+    # 读取后删除，避免重复注入
+    result_file.unlink()
+    logger.info(f"从 _search_results.json 注入 {len(items)} 条外部搜索结果（已删除源文件）")
+
+    return items
+
+
+def _export_search_tasks(target_date: str) -> Path:
+    """
+    导出竞品搜索任务清单为 JSON 文件，供外部搜索代理使用。
+
+    返回文件路径。
+    """
+    from collector.competitor_news import CompetitorNewsCollector
+    c = CompetitorNewsCollector()
+    tasks = c.build_search_tasks(target_date)
+
+    output_file = config.DATA_DIR / "_search_tasks.json"
+    output_file.write_text(json.dumps({
+        "target_date": target_date,
+        "total_tasks": len(tasks),
+        "tasks": tasks,
+        "instruction": (
+            "对每个品牌的 query 执行 WebSearch，收集近 7 天的新闻动态。"
+            "每条结果需包含: brand_name, brand_id, circle, title, url, summary, published_at, category。"
+            "将结果写入 data/_search_results.json，格式见 _inject_external_searches 文档。"
+        ),
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    logger.info(f"📋 搜索任务已导出: {output_file} ({len(tasks)} 个品牌)")
+    return output_file
 
 
 def _deploy_and_notify(report: dict, target_date: str):
@@ -641,6 +736,7 @@ if __name__ == "__main__":
     parser.add_argument("--date", type=str, default=None, help="指定日期 YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true", help="试运行（不写入文件）")
     parser.add_argument("--monday-update", action="store_true", help="仅执行周一品牌库更新（不跑完整日报流程）")
+    parser.add_argument("--export-searches", action="store_true", help="导出竞品搜索任务清单到 data/_search_tasks.json")
     args = parser.parse_args()
 
     # 配置日志
@@ -672,6 +768,12 @@ if __name__ == "__main__":
                 send_text_message(msg)
             except Exception as e:
                 logger.warning(f"品牌库更新通知发送失败: {e}")
+        sys.exit(0)
+
+    if args.export_searches:
+        # 仅导出搜索任务清单
+        target_date = args.date or date.today().isoformat()
+        _export_search_tasks(target_date)
         sys.exit(0)
 
     run_daily_job(target_date=args.date, dry_run=args.dry_run)
