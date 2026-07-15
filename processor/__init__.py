@@ -4,7 +4,7 @@
 from datetime import date, timedelta
 from loguru import logger
 
-from processor.dedup import match_event, compute_fingerprint_from_event, extract_keywords
+from processor.dedup import match_event, compute_fingerprint_from_event, extract_keywords, find_semantic_duplicates, merge_duplicate_event
 from processor.state_machine import EventStateMachine
 from processor.rater import EventRater
 from processor.aggregator import ReportAggregator
@@ -110,6 +110,29 @@ class ProcessingPipeline:
                 self.store.add(candidate)
                 new_events.append(candidate)
                 logger.info(f"新事件: {event_id} - {candidate.get('title', '')}")
+
+        # Step 2.5: 跨类别语义去重（V2.4）
+        # 在同品牌事件中，用标题/摘要文本相似度发现"同一消息不同归类"的重复事件
+        # 重复事件合并到主事件中（追加 related_urls），不再作为独立事件展示
+        all_stored = self.store.all()
+        dup_groups = find_semantic_duplicates(all_stored, title_threshold=0.25)
+        if dup_groups:
+            removed_ids = set()
+            for main_evt, dup_evt in dup_groups:
+                dup_id = dup_evt.get("event_id", "")
+                main_id = main_evt.get("event_id", "")
+                if dup_id in removed_ids or main_id in removed_ids:
+                    continue
+                logger.info(
+                    f"语义去重合并: [{main_evt.get('brand_name')}] "
+                    f"\"{main_evt.get('title','')[:50]}...\" ← \"{dup_evt.get('title','')[:50]}...\""
+                )
+                merge_duplicate_event(main_evt, dup_evt)
+                # 删除重复事件
+                self.store.delete(dup_id)
+                removed_ids.add(dup_id)
+            if removed_ids:
+                logger.info(f"语义去重: 合并 {len(removed_ids)} 条重复事件")
 
         # Step 3: 每日维护 — 检查冷却/关闭
         maintenance_updates = self.state_machine.daily_maintenance(

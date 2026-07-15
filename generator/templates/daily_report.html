@@ -63,6 +63,14 @@
       <span class="cite-badge cite-lead" title="{{ event.get('gate_note','来源不可核实或低可信，仅作跟进线索，不用于决策引证') }}">🔍 需核实</span>
       {% endif %}
     </div>
+  {% if event.related_urls and event.related_urls|length > 1 %}
+  <div class="card-related">
+    <span class="related-label">📰 多来源报道 ({{ event.related_urls|length }})：</span>
+    {% for r in event.related_urls[:5] %}
+    <a href="{{ r.url }}" target="_blank" rel="noopener" title="{{ r.title }}">{{ r.source or '来源' ~ (loop.index) }}</a>{% if not loop.last %} · {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
   {% if event.score_reason %}
   <div class="card-meta" style="margin-top:2px;">
     <span>📐 {{ event.score_reason }}</span>
@@ -295,6 +303,14 @@
   }
   .cite-ok  { background: rgba(56,158,13,0.12); color: #389e0d; border: 1px solid rgba(56,158,13,0.3); }
   .cite-lead{ background: rgba(0,0,0,0.05); color: #8c8c8c; border: 1px solid rgba(0,0,0,0.12); }
+  .card-related {
+    margin: 0 16px 10px; padding: 8px 12px;
+    background: #f6f8fa; border-radius: 6px; font-size: 12px;
+    color: #666; line-height: 1.8;
+  }
+  .card-related .related-label { color: #888; font-weight: 500; }
+  .card-related a { color: #d4380d; text-decoration: none; font-weight: 500; margin: 0 2px; }
+  .card-related a:hover { text-decoration: underline; }
   .leads-section { border-left: 4px solid #8c8c8c; }
   .leads-note {
     margin-bottom: 12px; padding: 10px 12px; font-size: 12px; line-height: 1.5;
