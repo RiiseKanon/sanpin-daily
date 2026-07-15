@@ -146,6 +146,20 @@ def deduplicate_items(
     return new_events, matched_pairs
 
 
+# 类别优先级（数字越大越优先，用于跨类别合并时选择主事件）
+CATEGORY_PRIORITY = {
+    "舆情/食安风险": 5,
+    "渠道/扩张动作": 4,
+    "新品牌/新产品出现": 4,
+    "高热度营销活动": 3,
+    "价格/促销/团购变动": 3,
+    "门店运营升级": 3,
+    "组织/资本/供应链动态": 2,
+    "数据/业绩披露": 2,
+    "行业趋势/政策": 1,
+}
+
+
 def find_semantic_duplicates(
     events: list[dict],
     title_threshold: float = 0.25,
@@ -195,8 +209,14 @@ def find_semantic_duplicates(
 
                 sim = jaccard_similarity(text_a, text_b)
                 if sim >= title_threshold:
-                    # 保留 idx 小的为主事件
-                    if idx_a < idx_b:
+                    # 优先级高的作为主事件；同优先级时保留 idx 小的
+                    pri_a = CATEGORY_PRIORITY.get(evt_a.get("category", ""), 0)
+                    pri_b = CATEGORY_PRIORITY.get(evt_b.get("category", ""), 0)
+                    if pri_a > pri_b:
+                        groups.append((evt_a, evt_b))
+                    elif pri_b > pri_a:
+                        groups.append((evt_b, evt_a))
+                    elif idx_a < idx_b:
                         groups.append((evt_a, evt_b))
                     else:
                         groups.append((evt_b, evt_a))
@@ -244,9 +264,9 @@ def merge_duplicate_event(main_event: dict, dup_event: dict) -> dict:
     将重复事件合并到主事件中。
 
     合并策略:
+    - 主事件已按类别优先级选定（高优先级的为主）
     - 追加 dup_event 的 URL 到 main_event 的 related_urls 列表
     - 如果 dup_event 的摘要更长，替换主事件摘要
-    - 保留主事件的类别、评分等核心字段不变
     - 如果 dup_event 的可信度更高，升级主事件的 citation_tier
     """
     import re
