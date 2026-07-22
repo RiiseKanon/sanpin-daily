@@ -1,0 +1,1189 @@
+<!-- 事件卡片宏 -->
+
+
+<!-- 品牌主色调映射 -->
+
+
+<!-- 类别图标映射 -->
+
+
+<!-- 行业趋势图片匹配 -->
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三品王每日品牌动态日报 — 2026-07-22</title>
+<style>
+  /* === 框架样式变量（来自 config.REPORT_CARD_STYLE_SPEC） === */
+  :root {
+    --container-w: 430px;
+    --container-pad: 12px;
+    --card-head-h: 120px;
+    --card-head-pad: 12px;
+    --bg-size: cover;
+    --bg-blur: 1.5px;
+    --overlay: rgba(0,0,0,0.3);
+    --brand-fs: 16px;
+    --brand-maxw: calc(100% - 80px);
+    --title-fs: 14px;
+    --text-color: white;
+    --text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5; color: #333; line-height: 1.6;
+    max-width: var(--container-w); margin: 0 auto; padding: var(--container-pad);
+  }
+  .header {
+    background: linear-gradient(135deg, #d4380d, #e8740c);
+    color: white; padding: 24px; border-radius: 12px; margin-bottom: 16px;
+    text-align: center;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .header .date { font-size: 14px; opacity: 0.9; }
+  .header .stats {
+    display: flex; justify-content: center; gap: 16px; margin-top: 12px;
+    font-size: 13px; flex-wrap: wrap;
+  }
+  .header .stats span { background: rgba(255,255,255,0.2); padding: 2px 10px; border-radius: 10px; }
+
+  .section {
+    background: white; border-radius: 12px; margin-bottom: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); overflow: hidden;
+  }
+  .section-header {
+    padding: 16px 20px; border-bottom: 1px solid #f0f0f0;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-header .icon { font-size: 24px; }
+  .section-header h2 { font-size: 17px; font-weight: 600; }
+  .section-header .rating-badge {
+    font-size: 12px; padding: 2px 8px; border-radius: 4px;
+    background: #f0f0f0; color: #666;
+  }
+  .section-body { padding: 16px 20px; }
+
+  .empty-state {
+    text-align: center; padding: 20px; color: #999; font-size: 14px;
+  }
+
+  /* === 事件卡片 v3 — 背景图覆盖头部全区域 === */
+  .event-card {
+    width: 100%;
+    background: white; border-radius: 10px; margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden;
+  }
+  .event-card:last-child { margin-bottom: 0; }
+
+  /* 卡片头部（背景图覆盖：品牌名 + 标签 + 标题）— 固定高度，所有卡片一致 */
+  .card-head {
+    position: relative; box-sizing: border-box;
+    padding: var(--card-head-pad);
+    height: var(--card-head-h); display: flex; align-items: flex-end;
+    overflow: hidden;
+  }
+  .card-head::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: var(--bg-image, none);
+    background-size: var(--bg-size);
+    background-position: var(--bg-position, top);
+    background-repeat: no-repeat;
+    filter: blur(var(--bg-blur));
+    z-index: 0;
+  }
+  .card-head-overlay {
+    position: absolute; inset: 0;
+    background: var(--overlay);
+    z-index: 1;
+  }
+  .card-head-content {
+    position: relative; z-index: 2; width: 100%;
+  }
+
+  /* 品牌名（单行截断） */
+  .card-brand-row {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 4px;
+    white-space: nowrap;
+  }
+  .card-brand-name {
+    font-size: var(--brand-fs); font-weight: 700; color: var(--text-color);
+    text-shadow: var(--text-shadow); max-width: var(--brand-maxw);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .card-circle-badge {
+    font-size: 11px; padding: 2px 8px; border-radius: 4px;
+    background: rgba(255,255,255,0.25); color: white; font-weight: 500;
+    backdrop-filter: blur(4px);
+  }
+  .circle-核心竞品 { background: rgba(212,107,8,0.5); }
+  .circle-区域竞品 { background: rgba(24,144,255,0.5); }
+  .circle-场景竞品 { background: rgba(56,158,13,0.5); }
+  .circle-替代竞品 { background: rgba(114,46,209,0.5); }
+  .circle-自身品牌 { background: rgba(212,136,6,0.5); }
+
+  /* 标签行（单行，不换行） */
+  .card-tags-row {
+    display: flex; align-items: center; gap: 6px; margin-bottom: 5px;
+    flex-wrap: nowrap; overflow: hidden;
+  }
+  .card-cat-icon { font-size: 13px; flex-shrink: 0; }
+  .card-cat-label {
+    font-size: 11px; color: white; background: rgba(255,255,255,0.2);
+    padding: 1px 6px; border-radius: 3px; backdrop-filter: blur(4px);
+    flex-shrink: 0;
+  }
+  .card-status {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px; font-weight: 600;
+    color: white; backdrop-filter: blur(4px); flex-shrink: 0;
+  }
+  .status-NEW { background: rgba(24,144,255,0.7); }
+  .status-ACTIVE { background: rgba(82,196,26,0.7); }
+  .status-ESCALATED { background: rgba(250,84,28,0.7); }
+  .card-score {
+    font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+    margin-left: auto; backdrop-filter: blur(4px); flex-shrink: 0;
+  }
+  .score-positive { background: rgba(56,158,13,0.6); color: white; }
+  .score-negative { background: rgba(207,19,34,0.6); color: white; }
+  .score-neutral { background: rgba(255,255,255,0.2); color: white; }
+
+  /* 标题（单行截断，不换行） */
+  .card-hero-title {
+    font-size: var(--title-fs); font-weight: 700; color: var(--text-color);
+    line-height: 1.3; text-shadow: var(--text-shadow);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+
+  .card-summary {
+    font-size: 13px; color: #555; padding: 12px 16px; line-height: 1.6;
+  }
+  .card-meta {
+    font-size: 12px; color: #999; padding: 0 16px 10px; display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .card-meta a { color: #d4380d; text-decoration: none; font-weight: 500; }
+
+  /* 来源可信度徽章 */
+  .cred-badge {
+    display: inline-flex; align-items: center; gap: 2px;
+    font-size: 10px; font-weight: 700; padding: 1px 7px; border-radius: 10px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .cred-high { background: rgba(56,158,13,0.85); color: #fff; }
+  .cred-mid  { background: rgba(250,173,20,0.92); color: #fff; }
+  .cred-low  { background: rgba(207,19,34,0.85); color: #fff; }
+  .gated-tag {
+    display: inline-block; margin-left: 2px; padding: 0 5px;
+    font-size: 11px; line-height: 16px; border-radius: 4px;
+    background: rgba(0,0,0,0.06); color: #8c8c8c; cursor: help;
+  }
+  .cite-badge {
+    display: inline-block; margin-left: 2px; padding: 0 6px;
+    font-size: 11px; line-height: 16px; border-radius: 4px; cursor: help;
+  }
+  .cite-ok  { background: rgba(56,158,13,0.12); color: #389e0d; border: 1px solid rgba(56,158,13,0.3); }
+  .cite-lead{ background: rgba(0,0,0,0.05); color: #8c8c8c; border: 1px solid rgba(0,0,0,0.12); }
+  .card-related {
+    margin: 0 16px 10px; padding: 8px 12px;
+    background: #f6f8fa; border-radius: 6px; font-size: 12px;
+    color: #666; line-height: 1.8;
+  }
+  .card-related .related-label { color: #888; font-weight: 500; }
+  .card-related a { color: #d4380d; text-decoration: none; font-weight: 500; margin: 0 2px; }
+  .card-related a:hover { text-decoration: underline; }
+  .leads-section { border-left: 4px solid #8c8c8c; }
+  .leads-note {
+    margin-bottom: 12px; padding: 10px 12px; font-size: 12px; line-height: 1.5;
+    background: #fffbe6; border: 1px solid #ffe58f; border-radius: 6px; color: #ad6800;
+  }
+  /* 焦点品牌基础资料色块网格（V2.3） */
+  .focus-info-grid {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;
+  }
+  .focus-info-item {
+    flex: 1 1 calc(50% - 6px); min-width: 140px; padding: 8px 10px;
+    background: #f5f5f5; border-radius: 6px; font-size: 13px; line-height: 1.4;
+  }
+  .fi-label { display: block; font-size: 11px; color: #8c8c8c; margin-bottom: 2px; }
+  .fi-value { display: block; font-weight: 500; color: #262626; }
+  .tracking-link {
+    margin: 0 16px 10px; padding: 8px 12px;
+    background: #fffbe6; border-radius: 6px; font-size: 12px;
+    color: #d48806; border: 1px solid #ffe58f;
+  }
+  .delta-info {
+    margin: 0 16px 10px; padding: 8px 12px;
+    background: #fff7e6; border-radius: 6px; font-size: 12px; color: #d46b08;
+  }
+
+  /* 排名表格 */
+  .ranking-table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+  }
+  .ranking-table th {
+    background: #fafafa; padding: 10px 12px; text-align: left;
+    font-weight: 600; border-bottom: 2px solid #f0f0f0;
+  }
+  .ranking-table td {
+    padding: 8px 12px; border-bottom: 1px solid #f5f5f5;
+  }
+  .ranking-table .rank-num {
+    width: 32px; height: 24px; display: inline-flex;
+    align-items: center; justify-content: center; border-radius: 4px;
+    font-weight: 700; font-size: 12px;
+  }
+  .rank-1 { background: #fff1b8; color: #d48806; }
+  .rank-2 { background: #f5f5f5; color: #666; }
+  .rank-3 { background: #f5f5f5; color: #666; }
+  .rank-other { color: #999; }
+
+  .ranking-note {
+    margin-top: 12px; padding: 10px 12px; background: #fafafa;
+    border-radius: 6px; font-size: 12px; color: #888;
+    border-left: 3px solid #d9d9d9;
+  }
+  .ranking-failed {
+    padding: 12px; background: #fff2f0; border-radius: 6px;
+    border: 1px solid #ffccc7; color: #cf1322; font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    text-align: center; padding: 16px; font-size: 12px; color: #ccc;
+  }
+</style>
+</head>
+<body>
+
+<!-- 头部 -->
+<div class="header">
+  <h1>🍜 三品王每日品牌动态日报</h1>
+  <div class="date">2026-07-22</div>
+  <div class="stats">
+    <span>📋 事件 15 条</span>
+    <span>🆕 新增 15</span>
+    <span>🔄 追踪 0</span>
+    
+  </div>
+</div>
+
+<!-- Part 1: 自身舆情 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">🌟</span>
+    <h2>自身舆情监控</h2>
+    <span class="rating-badge">正向评级 ±5</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="empty-state">今日无自身舆情动态（另有 2 条需核实线索见下方）</div>
+    
+  </div>
+</div>
+
+<!-- Part 2: 竞品动态 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">⚔️</span>
+    <h2>竞品动态</h2>
+    <span class="rating-badge">威胁评级 ±5</span>
+  </div>
+  <div class="section-body">
+    
+    
+      
+      <div style="margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:600;color:#888;margin-bottom:8px;">
+          核心竞品 (9)
+        </div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img0.baidu.com/it/u=4276962567,422029314&amp;fm=253&amp;fmt=auto?w=1066&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">柳螺香</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">进企业 送技术|广西柳州市质检中心走进“柳螺香”</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2023年8月29日中国质量新闻网讯 近日，广西柳州市质量检验检测研究中心（以下简称：市质检中心）接到广西柳螺香食品科技有限公司的求助，企业检验人员对产品出厂检验过程中的微生物检测结果判断存在...中国质量新闻网</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://baijiahao.baidu.com/s?id=1775532584872298981&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-mid" title="权威度68% × 内容可信度70% = 综合48%；百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）">🔍 可信指数 48% · 中</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img0.baidu.com/it/u=3309559320,3673013026&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1198&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">王味螺</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">树立行业标杆_广西柳州市人民政府门户网站</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2023年8月17日授予来自市得华食品有限公司的“好欢螺”、广西螺霸王食品科技有限公司的“螺霸王”、市乐哈哈食品科技有限公司的“华A”、市星选食品科技有限公司的“螺之源”等品牌2022年度柳州螺蛳粉预包装十大品牌荣誉称号;授予来自广西王味螺连锁餐饮管理有限公司的“王味螺”、...柳州市人民政府</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/t19700101_3319670.shtml" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-high" title="权威度95% × 内容可信度92% = 综合87%；政府官方网站，权威发布">🔍 可信指数 87% · 高</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img0.baidu.com/it/u=3309559320,3673013026&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1198&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">王味螺</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">柳州螺蛳粉香飘首届全国退役军人创业创新成果展交会</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2023年4月6日广西王味螺连锁餐饮管理有限公司总经理王友强参加“军创英雄汇”全国退役军人创业创新发展论坛。柳州市人民政府</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="http://www.liuzhou.gov.cn/tyjrswj/xwzx/gzyw/t19700101_3249038.shtml" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-high" title="权威度95% × 内容可信度92% = 综合87%；政府官方网站，权威发布">🔍 可信指数 87% · 高</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=3277402797,1660777&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1067&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">柳盛</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">“设计之都”首个子项目开工</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2022年5月30日项目现场生产副经理王立超介绍,华兆路二期对优化区域道路系统和路网结构、支持柳林公园建设及柳盛道两侧开发具有重要意义,“目前现场建设者约有60名,挖掘机、装载机、推土机等机械设备也已陆续到位。我们将开足马力加紧施工,确保道路如期通车。” 海河柳林“设计之都...天津政务网</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://www.tj.gov.cn/sy/tjxw/202205/t20220530_5891763.html" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-high" title="权威度95% × 内容可信度92% = 综合87%；政府官方网站，权威发布">🔍 可信指数 87% · 高</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=3277402797,1660777&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1067&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">柳盛</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">重罚!两药房卖高价口罩 各罚300万元</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2020年1月30日北京市丰台区市场监管局认定当事人的行为违反《价格法》《价格违法行为行政处罚规定》,构成哄抬价格的违法行为,拟处以300万元罚款的行政处罚。 此外,1月26日,天津市津南区市场监管局根据举报对天津市旭润惠民大药房连锁有限公司柳盛道分公司进行检查。经查,当事人以12...央视网</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://news.cctv.com/2020/01/30/ARTIv7q0iD6T15pVDXnh3dgQ200130.shtml" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-high" title="权威度90% × 内容可信度88% = 综合79%；央视网，权威媒体报道">🔍 可信指数 79% · 高</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=383777975,1170127220&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1067&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">秋菊</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">菊花,被误读的传统吉祥花</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2025年10月15日清代著名画家石涛以陶渊明菊花诗意为蓝本创作的画作。老舍先生在《四世同堂》中曾这样描写：“以花为粮的丰台开始一挑一挑的往城里运送叶齐苞大的秋菊，而公园中的花匠，与爱美的艺菊家...京报网</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://baijiahao.baidu.com/s?id=1846007201091043615&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-mid" title="权威度68% × 内容可信度70% = 综合48%；百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）">🔍 可信指数 48% · 中</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=383777975,1170127220&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1067&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">秋菊</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">千城百县看中国丨新疆昌吉:72万株秋菊盛放喜迎国庆</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2025年10月1日金秋九月,位于昌吉国家农业高新技术产业示范区的新疆农业博览园里,72万株秋菊争相绽放、千姿...新华网</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="http://www.xj.xinhuanet.com/20251001/8ac2687255dc4f108cfbf4761f60161a/c.html" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-high" title="权威度93% × 内容可信度88% = 综合82%；新华网，国家通讯社主办">🔍 可信指数 82% · 高</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=383777975,1170127220&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1067&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">秋菊</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">风物二十四节气|寒露:秋菊有佳色,更露摄其英</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2024年10月8日晋朝陶渊明(355—417年)爱菊成癖,曾广为流传。他写过不少咏菊诗句,如“采菊东篱下,悠然见南山”;“秋菊有佳色,更露摄其英”等名句,今仍脍炙人口。当时士大夫慕其高风亮节,亦多种菊自赏,并夸赞菊花是“芳熏百草,色艳群英”。 (传)明 唐寅 采菊图 轴(局部) 台北故宫博物...</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://culture.ifeng.com/c/8dVdlOOm9HN" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-mid" title="权威度78% × 内容可信度80% = 综合62%；凤凰网，新闻报道">🔍 可信指数 62% · 中</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+        
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=383777975,1170127220&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=1067&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">秋菊</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">📋</span>
+        <span class="card-cat-label">行业趋势/政策</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">秋菊吐蕊飘香季 正是赏花好时节</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2024年9月28日秋菊吐蕊飘香季正是赏花好时节 发布日期: 2024-09-28 09:43:13 来源:丝路昌吉客户端 浏览次数 117 次 文章字号: 大 中 小 分享: 微信 微博 no video 上一篇: 气象科普进校园科... 下一篇: 昌吉州举行烈士纪念... 【返回顶部】 【打印本</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://www.cj.gov.cn/p1/cjyw/20240928/279007.html" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-high" title="权威度95% × 内容可信度92% = 综合87%；政府官方网站，权威发布">🔍 可信指数 87% · 高</span>
+      
+      
+      
+      <span class="cite-badge cite-ok" title="来源可核实且中高可信，可用于决策引证">✅ 可引证</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+        
+      </div>
+      
+    
+      
+    
+      
+    
+      
+    
+    
+  </div>
+</div>
+
+<!-- Part 3: 行业趋势/政策 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📈</span>
+    <h2>行业趋势/政策</h2>
+    <span class="rating-badge">利好评级 ±5</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="empty-state">今日无行业政策动态（另有 2 条需核实线索见下方）</div>
+    
+  </div>
+</div>
+
+<!-- 需核实线索（引证分级 V2.2）：与可引证动态分离 -->
+<div class="section leads-section">
+  <div class="section-header">
+    <span class="icon">🔍</span>
+    <h2>需核实线索</h2>
+    <span class="rating-badge" style="background:#8c8c8c;">仅作线索 · 不引证</span>
+  </div>
+  <div class="section-body">
+    
+    <div class="leads-note">⚠️ 以下动态来源不可核实或可信度低，仅作跟进线索，请勿直接用于决策引证。</div>
+    
+    
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img1.baidu.com/it/u=1433394805,3620173469&amp;fm=253&amp;fmt=auto&amp;app=120&amp;f=JPEG?w=730&amp;h=500');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">尝不忘</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">⚠️</span>
+        <span class="card-cat-label">舆情/食安风险</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +4
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">广西防城港市市场监督管理局食品安全监督抽检信息通告 (2020年第...</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2020年12月30日‍中国质量新闻网讯 12月29日,广西防城港市市场监督管理局网站发布《防城港市市场监督管理局食品安全监督抽检信息通告(2020年第15期)》。 通告称,近期,防城港市市场监督管理局组织抽检...中国质量新闻网</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://www.cqn.com.cn/ms/content/2020-12/30/content_8656525.htm" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-low" title="权威度50% × 内容可信度50% = 综合25%；来源未知，建议交叉核实">🔍 可信指数 25% · 低</span>
+      
+      
+      
+      <span class="cite-badge cite-lead" title="">🔍 需核实</span>
+      
+    </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+3 × 圈层(核心竞品=1.5) × 时效(0天前/舆情/食安风险=1.0) → 钳位至 +4</span>
+  </div>
+  
+  
+  
+</div>
+    
+    
+
+
+
+
+
+<div class="event-card">
+  <!-- 卡片头部（背景图覆盖：品牌名 + 标签 + 标题头） -->
+  <div class="card-head" style="--bg-image: url('https://img0.baidu.com/it/u=4276962567,422029314&amp;fm=253&amp;fmt=auto?w=1066&amp;h=800');--bg-position: top;">
+    <div class="card-head-overlay"></div>
+    <div class="card-head-content">
+      <!-- 品牌名 -->
+      
+      <div class="card-brand-row">
+        <span class="card-brand-name">柳螺香</span>
+        
+        <span class="card-circle-badge circle-核心竞品">核心竞品</span>
+        
+      </div>
+      
+
+      <!-- 标签行 -->
+      <div class="card-tags-row">
+        <span class="card-cat-icon">🏢</span>
+        <span class="card-cat-label">组织/资本/供应链动态</span>
+        <span class="card-status status-NEW">NEW</span>
+        <span class="card-score score-positive">
+          威胁评级 +2
+        </span>
+      </div>
+
+      <!-- 标题 -->
+      <div class="card-hero-title">微念控股柳螺香,深化布局螺蛳粉供应链</div>
+    </div>
+  </div>
+
+  <!-- 摘要 -->
+  
+  <div class="card-summary">2023年9月20日2、微念控股餐饮连锁品牌「柳螺香」 近日,广西柳螺香食品科技有限公司完成工商变更,微念由参股股东变更为控股股东,从股东方面来看,广西微念实业有限公司成为广西柳螺香食品科技有限公司第一大股东,持股比例从10%提升到70.04%。据悉,本次合作基于双方对柳州螺蛳粉产业...搜狐娱乐</div>
+  
+
+    <!-- 底部信息 -->
+    <div class="card-meta">
+      <span>📅 </span>
+      
+      
+      <span>📎 <a href="https://www.bjnews.com.cn/detail/1694762614169193.html" target="_blank" rel="noopener">新闻搜索</a></span>
+      
+      
+      
+      
+      
+      <span class="cred-badge cred-low" title="权威度50% × 内容可信度50% = 综合25%；来源未知，建议交叉核实">🔍 可信指数 25% · 低</span>
+      
+      
+      
+      <span class="cite-badge cite-lead" title="">🔍 需核实</span>
+      
+    </div>
+  
+  <div class="card-related">
+    <span class="related-label">📰 多来源报道 (2)：</span>
+    
+    <a href="https://www.bjnews.com.cn/detail/1694762614169193.html" target="_blank" rel="noopener" title="微念控股柳螺香,深化布局螺蛳粉供应链">新京报</a> · 
+    
+    <a href="https://yule.sohu.com/a/722108679_120773210" target="_blank" rel="noopener" title="美腕回应李佳琦抖音认证消失丨蓝鲨消费早报9月20日">搜狐娱乐</a>
+    
+  </div>
+  
+  
+  <div class="card-meta" style="margin-top:2px;">
+    <span>📐 基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/组织/资本/供应链动态=1.0) → 钳位至 +2</span>
+  </div>
+  
+  
+  
+</div>
+    
+    
+  </div>
+</div>
+
+<!-- Part 4: 今日焦点品牌 -->
+<div class="section">
+  <div class="section-header">
+    <span class="icon">📖</span>
+    <h2>今日焦点品牌</h2>
+    <span class="rating-badge">固定板块 · 每日轮换</span>
+  </div>
+  <div class="section-body">
+    
+    
+    <div class="event-card" style="border-left:4px solid #d4380d;">
+      <div class="card-header">
+        <span class="category-icon">📖</span>
+        <span class="brand-tag">老盐街桂林米粉</span>
+        <span class="circle-tag">核心竞品</span>
+        <span style="font-size:12px;color:#888;">#15 / 43</span>
+      </div>
+      <div class="card-title">老盐街桂林米粉 — 竞品深度分析</div>
+
+      <!-- 基础资料：带背景色块的卡片行（V2.3） -->
+      <div class="focus-info-grid">
+        <div class="focus-info-item"><span class="fi-label">品类</span><span class="fi-value">米粉（桂林米粉）</span></div>
+        <div class="focus-info-item"><span class="fi-label">价格带</span><span class="fi-value">10-15元</span></div>
+        <div class="focus-info-item"><span class="fi-label">门店数</span><span class="fi-value">40+</span></div>
+        <div class="focus-info-item"><span class="fi-label">总部</span><span class="fi-value">桂林</span></div>
+        <div class="focus-info-item"><span class="fi-label">创立</span><span class="fi-value">2012年</span></div>
+        <div class="focus-info-item"><span class="fi-label">主营区域</span><span class="fi-value">桂林,南宁,青岛</span></div>
+        <div class="focus-info-item"><span class="fi-label">置信度</span><span class="fi-value">中</span></div>
+      </div>
+
+      
+      <div style="margin-top:12px;padding:10px;background:#fff7e6;border-radius:6px;font-size:13px;">
+        <strong>⚡ 与三品王重叠维度分析</strong><br>
+        重叠维度: 3/4 (价格带、区域、场景)<br>
+        价格带重叠（10-15元），面向同一消费群体；主营区域重叠（广西），门店覆盖范围存在正面竞争；消费场景一致（到店+外卖双渠道快餐），争夺同一批客流。重叠度 3/4，核心竞品 Level 3。
+      </div>
+      
+
+      
+      <div style="margin-top:12px;padding:10px;background:#f6ffed;border-radius:6px;font-size:13px;">
+        <strong>📊 竞争评估</strong><br>
+        📊 中等威胁：三维重叠。门店数 40+，规模中等，重点监控其区域扩张动态。
+      </div>
+      
+
+      
+      <div style="margin-top:12px;padding:12px;background:linear-gradient(135deg,#f0f5ff,#e6f7ff);border-radius:6px;font-size:13px;line-height:1.7;border:1px solid #d6e4ff;">
+        <strong style="color:#1d39c4;">🤖 AI 竞争态势分析</strong>
+        <div style="margin-top:6px;white-space:pre-line;">老盐街桂林米粉创立于2012年，是米粉（桂林米粉）领域代表性连锁品牌，总部位于桂林，全国门店约40+家，主营桂林,南宁,青岛市场。
+
+经营方式：以加盟连锁模式为主，依托标准化供应链实现快速复制。
+
+出品特点：以米粉为核心产品线；客单价约10-15元，定位大众快餐消费。
+
+— 分析基于品牌库数据（规则引擎），仅供参考</div>
+      </div>
+      
+
+      <div class="card-meta" style="margin-top:8px;">
+        <span>📎 数据来源: 品牌库 + AI搜索分析</span>
+        <span>🔄 下次轮换: 43天后</span>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Part 5: 品牌库变动简报（仅周一） -->
+
+
+<div class="footer">
+  三品王竞品监测系统 · 自动生成于 2026-07-22 · 品牌库 v5.4
+</div>
+
+</body>
+</html>
