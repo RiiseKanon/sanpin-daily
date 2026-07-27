@@ -1,0 +1,1815 @@
+{
+  "events": [
+    {
+      "brand_name": "尝不忘",
+      "brand_id": "BR002",
+      "circle": "核心竞品",
+      "category": "舆情/食安风险",
+      "title": "广西防城港市市场监督管理局食品安全监督抽检信息通告 (2020年第...",
+      "summary": "2020年12月30日‍中国质量新闻网讯 12月29日,广西防城港市市场监督管理局网站发布《防城港市市场监督管理局食品安全监督抽检信息通告(2020年第15期)》。 通告称,近期,防城港市市场监督管理局组织抽检...中国质量新闻网",
+      "keywords": [
+        "防城港市",
+        "监督",
+        "2020",
+        "管理局",
+        "通告"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.cqn.com.cn/ms/content/2020-12/30/content_8656525.htm",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=1433394805,3620173469&fm=253&fmt=auto&app=120&f=JPEG?w=730&h=500",
+      "base_score": 3,
+      "score": 4,
+      "score_reason": "基础分=+3 × 圈层(核心竞品=1.5) × 时效(0天前/舆情/食安风险=1.0) → 钳位至 +4",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "尝不忘",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=尝不忘&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.cqn.com.cn/ms/content/2020-12/30/content_8656525.htm",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-001",
+      "fingerprint": "25304e694c4e0251",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "广西防城港市市场监督管理局食品安全监督抽检信息通告 (2020年第...",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "粉之都",
+      "brand_id": "BR003",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "南宁市场监管部门探查粉之都、三品王后厨,现场发现……",
+      "summary": "2021年9月23日市民代表一同走进粉之都、三品王两家米粉店后厨,严格督查粉店是否按照生产流程进行操作,严把食品安全关,坚决消除食品安全风险隐患。南宁云-南宁新闻网对本次活动进行了全程直播。 规范...中国质量新闻网",
+      "keywords": [
+        "南宁",
+        "食品安全",
+        "三品",
+        "新闻网",
+        "米粉店"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.cqn.com.cn/mclz/content/2021-09/23/content_8735678.htm",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=281889018,2222727062&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "粉之都",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=粉之都&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.cqn.com.cn/mclz/content/2021-09/23/content_8735678.htm",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-002",
+      "fingerprint": "b028f26ad9f35846",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "南宁市场监管部门探查粉之都、三品王后厨,现场发现……",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "粉之都",
+      "brand_id": "BR003",
+      "circle": "核心竞品",
+      "category": "渠道/扩张动作",
+      "title": "三品王、粉之都联合出新?南宁女子花20万加盟“粉都三品王”后发现...",
+      "summary": "2021年3月3日2020年8月，南宁市民闫女士想加盟三品王粉店，有自称是三品王招商总监的人向她介绍“粉都三品王”项目，并称该项目由三品王、粉之都、绍兴市老台门餐饮管理有限公司（下称“老台门”）...北青网",
+      "keywords": [
+        "三品",
+        "...",
+        "老台门",
+        "南宁",
+        "加盟"
+      ],
+      "source": "新闻搜索",
+      "url": "http://baijiahao.baidu.com/s?id=1693212451615733351&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=281889018,2222727062&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 3,
+      "score": 4,
+      "score_reason": "基础分=+3 × 圈层(核心竞品=1.5) × 时效(0天前/渠道/扩张动作=1.0) → 钳位至 +4",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "粉之都",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=粉之都&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 55,
+        "composite": 37,
+        "level": "低",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）；正文信号微调：自评选/招商拉票(-15)（内容分 70→55）",
+        "matched": "baidu.com",
+        "signals": [
+          {
+            "signal": "self_nomination",
+            "label": "自评选/招商拉票",
+            "adjust": -15,
+            "matched": [
+              "招商"
+            ]
+          }
+        ]
+      },
+      "verifiable": true,
+      "citation_url": "http://baijiahao.baidu.com/s?id=1693212451615733351&wfr=spider&for=pc",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-003",
+      "fingerprint": "d13c0e26ef9adafd",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "三品王、粉之都联合出新?南宁女子花20万加盟“粉都三品王”后发现...",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "螺蛳粉抽检报告:霉菌超标是主因;螺霸王、柳江人家、柳螺香“上榜”",
+      "summary": "2023年12月11日标称由广西柳螺香食品科技有限公司生产的柳螺香柳州螺蛳粉(300克/袋)过氧化值超标。 螺蛳粉的消费提示 1. 在选购螺蛳粉时,一定要选择正规渠道销售的产品,从抽检数据看,知名品牌螺蛳粉的...东方财富网",
+      "keywords": [
+        "螺蛳",
+        "柳螺香",
+        "抽检",
+        "超标",
+        "食品科技"
+      ],
+      "source": "新闻搜索",
+      "url": "https://finance.eastmoney.com/a/202312112929566215.html",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=柳螺香&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://finance.eastmoney.com/a/202312112929566215.html",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-004",
+      "fingerprint": "2f762d367047e01f",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "螺蛳粉抽检报告:霉菌超标是主因;螺霸王、柳江人家、柳螺香“上榜”",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "组织/资本/供应链动态",
+      "title": "微念控股柳螺香,深化布局螺蛳粉供应链",
+      "summary": "2023年9月20日2、微念控股餐饮连锁品牌「柳螺香」 近日,广西柳螺香食品科技有限公司完成工商变更,微念由参股股东变更为控股股东,从股东方面来看,广西微念实业有限公司成为广西柳螺香食品科技有限公司第一大股东,持股比例从10%提升到70.04%。据悉,本次合作基于双方对柳州螺蛳粉产业...搜狐娱乐",
+      "keywords": [
+        "微念",
+        "螺蛳",
+        "柳螺香",
+        "15",
+        "深化"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/组织/资本/供应链动态=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=柳螺香&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-006",
+      "fingerprint": "b085aa8b5d3796cf",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "微念控股柳螺香,深化布局螺蛳粉供应链",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ],
+      "related_urls": [
+        {
+          "url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+          "source": "新京报",
+          "title": "微念控股柳螺香,深化布局螺蛳粉供应链"
+        },
+        {
+          "url": "https://yule.sohu.com/a/722108679_120773210",
+          "source": "搜狐娱乐",
+          "title": "美腕回应李佳琦抖音认证消失丨蓝鲨消费早报9月20日"
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "进企业 送技术|广西柳州市质检中心走进“柳螺香”",
+      "summary": "2023年8月29日中国质量新闻网讯 近日，广西柳州市质量检验检测研究中心（以下简称：市质检中心）接到广西柳螺香食品科技有限公司的求助，企业检验人员对产品出厂检验过程中的微生物检测结果判断存在...中国质量新闻网",
+      "keywords": [
+        "质检中心",
+        "柳螺香",
+        "柳州市",
+        "广西",
+        "新闻网"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1775532584872298981&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=柳螺香&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1775532584872298981&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-007",
+      "fingerprint": "cdd5b3819233faf9",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "进企业 送技术|广西柳州市质检中心走进“柳螺香”",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "树立行业标杆_广西柳州市人民政府门户网站",
+      "summary": "2023年8月17日授予来自市得华食品有限公司的“好欢螺”、广西螺霸王食品科技有限公司的“螺霸王”、市乐哈哈食品科技有限公司的“华A”、市星选食品科技有限公司的“螺之源”等品牌2022年度柳州螺蛳粉预包装十大品牌荣誉称号;授予来自广西王味螺连锁餐饮管理有限公司的“王味螺”、...柳州市人民政府",
+      "keywords": [
+        "食品科技",
+        "有限公司",
+        "王味",
+        "柳州市",
+        "广西"
+      ],
+      "source": "新闻搜索",
+      "url": "http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/t19700101_3319670.shtml",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=柳螺香&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/t19700101_3319670.shtml",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-008",
+      "fingerprint": "ba43a452b7a1602a",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "树立行业标杆_广西柳州市人民政府门户网站",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "螺公堂",
+      "brand_id": "BR005",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "关于人民网网友留言反映广源鲁班壹号小区楼体排烟管道破损问题...",
+      "summary": "2023年2月1日一、基本情况 经查,网友反映的“螺公堂”餐饮店已停业搬迁,现实际承接原“螺公堂”餐饮店广源·鲁班壹号一层117至122号商铺(鲁班路71号)进行餐饮经营的为 “五条友烧烤店”,主要经营餐饮及夜宵烧烤。 二、调查处理情况 接到本次投诉后,2023年1月9日,我局联合西乡塘区...南宁",
+      "keywords": [
+        "壹号",
+        "广源",
+        "...",
+        "2023",
+        "餐饮店"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.nanning.gov.cn/zwgk/fdzdgknr/shgysyjslyxxgk/hjbh/hjwrtscl/t5681183.html",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=3645718428,3876225989&fm=253&fmt=auto&app=120&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "螺公堂",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=螺公堂&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.nanning.gov.cn/zwgk/fdzdgknr/shgysyjslyxxgk/hjbh/hjwrtscl/t5681183.html",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-009",
+      "fingerprint": "790bfcc59a5ca99e",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "关于人民网网友留言反映广源鲁班壹号小区楼体排烟管道破损问题...",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "王味螺",
+      "brand_id": "BR025",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "树立行业标杆_广西柳州市人民政府门户网站",
+      "summary": "2023年8月17日授予来自市得华食品有限公司的“好欢螺”、广西螺霸王食品科技有限公司的“螺霸王”、市乐哈哈食品科技有限公司的“华A”、市星选食品科技有限公司的“螺之源”等品牌2022年度柳州螺蛳粉预包装十大品牌荣誉称号;授予来自广西王味螺连锁餐饮管理有限公司的“王味螺”、...柳州市人民政府",
+      "keywords": [
+        "食品科技",
+        "有限公司",
+        "王味",
+        "柳州市",
+        "广西"
+      ],
+      "source": "新闻搜索",
+      "url": "http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/t19700101_3319670.shtml",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=3309559320,3673013026&fm=253&fmt=auto&app=138&f=JPEG?w=1198&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "王味螺",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=王味螺&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "http://www.liuzhou.gov.cn/zjlz/xwzx/lzyw/t19700101_3319670.shtml",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-010",
+      "fingerprint": "6d111c54879bf930",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "树立行业标杆_广西柳州市人民政府门户网站",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "王味螺",
+      "brand_id": "BR025",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "柳州螺蛳粉香飘首届全国退役军人创业创新成果展交会",
+      "summary": "2023年4月6日广西王味螺连锁餐饮管理有限公司总经理王友强参加“军创英雄汇”全国退役军人创业创新发展论坛。柳州市人民政府",
+      "keywords": [
+        "退役军人",
+        "创业",
+        "成果展",
+        "粉香",
+        "2023"
+      ],
+      "source": "新闻搜索",
+      "url": "http://www.liuzhou.gov.cn/tyjrswj/xwzx/gzyw/t19700101_3249038.shtml",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=3309559320,3673013026&fm=253&fmt=auto&app=138&f=JPEG?w=1198&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "王味螺",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=王味螺&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "http://www.liuzhou.gov.cn/tyjrswj/xwzx/gzyw/t19700101_3249038.shtml",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-011",
+      "fingerprint": "a5ae2760272c6f54",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "柳州螺蛳粉香飘首届全国退役军人创业创新成果展交会",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "螺小丰螺蛳粉",
+      "brand_id": "BR027",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "「为幸福加码」新一年,逛首店!昌平百店齐开,走起来~",
+      "summary": "2024年1月3日地址：天南街道龙德广场B1楼本镇街其他首店伊豆野菜村——天南街道龙德广场5层胜博殿日式炸猪排——天南街道龙德广场5层松鹤楼面馆——天南街道龙德广场5层锦边炉糟粕醋火锅——天南街...北京昌平官方发布",
+      "keywords": [
+        "龙德",
+        "天南",
+        "街道",
+        "广场",
+        "首店"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1787052779577871773&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=773018574,3973498411&fm=253&fmt=auto&app=138&f=JPEG?w=1422&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "螺小丰螺蛳粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=螺小丰螺蛳粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1787052779577871773&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-012",
+      "fingerprint": "b2846920bd035bed",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "「为幸福加码」新一年,逛首店!昌平百店齐开,走起来~",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳盛",
+      "brand_id": "BR028",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "“设计之都”首个子项目开工",
+      "summary": "2022年5月30日项目现场生产副经理王立超介绍,华兆路二期对优化区域道路系统和路网结构、支持柳林公园建设及柳盛道两侧开发具有重要意义,“目前现场建设者约有60名,挖掘机、装载机、推土机等机械设备也已陆续到位。我们将开足马力加紧施工,确保道路如期通车。” 海河柳林“设计之都...天津政务网",
+      "keywords": [
+        "柳林",
+        "子项目",
+        "现场",
+        "道路",
+        "2022"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.tj.gov.cn/sy/tjxw/202205/t20220530_5891763.html",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=3277402797,1660777&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳盛",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=柳盛&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.tj.gov.cn/sy/tjxw/202205/t20220530_5891763.html",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-013",
+      "fingerprint": "f90d2dafd66aa86c",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "“设计之都”首个子项目开工",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳盛",
+      "brand_id": "BR028",
+      "circle": "核心竞品",
+      "category": "价格/促销/团购变动",
+      "title": "天津市场监管部门出重拳 打击价格违法行为典型案件",
+      "summary": "2020年1月30日(一)天津市旭润惠民大药房连锁有限公司柳盛道分公司涉嫌哄抬价格违法案件 1月26日,津南区市场监管局根据举报对天津市旭润惠民大药房连锁有限公司柳盛道分公司进行检查。经查,当事人以12元/只购进KN95口罩并抬高至128元/只销售;以进价15.2元/盒购进片仔癀防雾霾口罩(成...",
+      "keywords": [
+        "旭润",
+        "柳盛道",
+        "药房",
+        "惠民",
+        "口罩"
+      ],
+      "source": "新闻搜索",
+      "url": "http://news.enorth.com.cn/system/2020/01/30/037960292.shtml",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=3277402797,1660777&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 2,
+      "score": 3,
+      "score_reason": "基础分=+2 × 圈层(核心竞品=1.5) × 时效(0天前/价格/促销/团购变动=1.0)",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳盛",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=柳盛&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "http://news.enorth.com.cn/system/2020/01/30/037960292.shtml",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-014",
+      "fingerprint": "df658a9df69ea4d2",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "天津市场监管部门出重拳 打击价格违法行为典型案件",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "秋菊",
+      "brand_id": "BR030",
+      "circle": "核心竞品",
+      "category": "高热度营销活动",
+      "title": "九九重阳登高赏红叶、观秋菊,北京市属公园活动一表收藏",
+      "summary": "2025年10月24日秋意正浓，重阳将至这个重阳不止赏秋，更要陪伴北京市属公园推出系列温情活动带上爸妈打卡京城最美秋色从香山红叶漫山到北海菊花争艳从百望山层林尽染到天坛秋韵流金一起欣赏美景传承重...劳动午报",
+      "keywords": [
+        "红叶",
+        "重阳",
+        "北京市",
+        "公园",
+        "争艳"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1846864232185825016&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=383777975,1170127220&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 2,
+      "score": 3,
+      "score_reason": "基础分=+2 × 圈层(核心竞品=1.5) × 时效(0天前/高热度营销活动=1.0)",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "秋菊",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=秋菊&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1846864232185825016&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-015",
+      "fingerprint": "7533eb7748c57b04",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "九九重阳登高赏红叶、观秋菊,北京市属公园活动一表收藏",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "秋菊",
+      "brand_id": "BR030",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "秋菊傲霜斗寒开,独立疏篱趣未穷|文物中的花神",
+      "summary": "2024年10月1日凌寒独自开的菊花，更是高洁品格的化身。从屈原的“西餐秋菊之落英”到白居易的“耐寒惟有东篱菊”，文人墨客以菊自喻，颂扬那些在逆境中坚守节操、清高自守的君子之风。陶渊明笔下的“...经济观察报",
+      "keywords": [
+        "秋菊",
+        "自喻",
+        "落英",
+        "东篱",
+        "傲霜斗"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1811665665526691870&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=383777975,1170127220&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "秋菊",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=秋菊&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1811665665526691870&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-016",
+      "fingerprint": "69b98e46b0ffb46d",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "秋菊傲霜斗寒开,独立疏篱趣未穷|文物中的花神",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "秋菊",
+      "brand_id": "BR030",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "张艺谋新片《第二十条》能否解“秋菊”之困?",
+      "summary": "2024年2月23日有人说,张艺谋把“秋菊打官司”打到了“第二十条”。实际上,2024年的《第二十条》与1992...1905电影网",
+      "keywords": [
+        "第二十条",
+        "2024",
+        "秋菊",
+        "张艺谋",
+        "之困"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.1905.com/news/20240223/1662766.shtml",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=383777975,1170127220&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "秋菊",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=秋菊&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.1905.com/news/20240223/1662766.shtml",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-017",
+      "fingerprint": "1e4d97438d91de29",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "张艺谋新片《第二十条》能否解“秋菊”之困?",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "秋菊",
+      "brand_id": "BR030",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "《秋菊的困惑》:一部电影与中国法学三十年",
+      "summary": "2023年12月1日如今，中国法学界与《秋菊打官司》这部电影，共同走过二十多年，这部作品和其议题也成了法学界经久不衰的话题。《秋菊的困惑：一部电影与中国法学三十年》这本书，精选了十四篇探讨“秋...北京日报客户端",
+      "keywords": [
+        "秋菊",
+        "法学界",
+        "电影",
+        "困惑",
+        "法学"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1784094618039331612&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=383777975,1170127220&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "秋菊",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=秋菊&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1784094618039331612&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-018",
+      "fingerprint": "2116a9c8712ae980",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "《秋菊的困惑》:一部电影与中国法学三十年",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "秋菊",
+      "brand_id": "BR030",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "节令之美丨农历九月天,菊花有佳色",
+      "summary": "2023年10月15日屈原在《离骚》中说:“朝饮木兰之坠露兮,夕餐秋菊之落英”,可见菊花可食。荔枝网新闻",
+      "keywords": [
+        "菊花",
+        "落英",
+        "之美",
+        "有佳色",
+        "2023"
+      ],
+      "source": "新闻搜索",
+      "url": "https://news.jstv.com/a/20231015/1697341267898.shtml",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=383777975,1170127220&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "秋菊",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=秋菊&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://news.jstv.com/a/20231015/1697341267898.shtml",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-019",
+      "fingerprint": "989d8dd26ff69d1a",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "节令之美丨农历九月天,菊花有佳色",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "崇善米粉",
+      "brand_id": "BR041",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "广西桂林市市场监督管理局抽检1538批次食品 不合格50批次",
+      "summary": "2022年12月16日（五十）在象山区鑫源糖酒食品经营部抽检的桂林崇善米粉（其他食品），生产日期为2022年7月1日，过氧化值(以脂肪计)的残留量不符合食品安全国家标准规定，检验机构为：桂林市食品药品检验所。桂林市市场监督管理局针对抽检发现的问题，对于不合格样品涉及的生产经营单...中国质量新闻网",
+      "keywords": [
+        "桂林市",
+        "抽检",
+        "2022",
+        "批次",
+        "食品"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1752356747920824054&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img2.baidu.com/it/u=1556337274,872273345&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "崇善米粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=崇善米粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1752356747920824054&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-020",
+      "fingerprint": "5263a0ed0141ea05",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "广西桂林市市场监督管理局抽检1538批次食品 不合格50批次",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "阿秀米粉",
+      "brand_id": "BR043",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "“粉超”今日开幕 94支队伍明日开战 千里赴桂 同台竞“味”",
+      "summary": "4月17日扎根兴安的米粉全产业链企业，拥有2万多平方米的生产基地和每年3.5亿元的设计产值。此次“粉超”，他们派出国家级乡村工匠名师苏爱琼和兴安县米粉制作技艺制作非物质文化遗产代表性传承人蒋金洪，带来传统技艺制作的黄豆酱米粉和极具创新的羽衣甘蓝米粉，让大家看到兴...桂林生活网",
+      "keywords": [
+        "米粉",
+        "粉超",
+        "制作",
+        "技艺",
+        "94"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1862691206824661390&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=3186726853,2696839809&fm=253&fmt=auto&app=138&f=JPEG?w=869&h=500",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "阿秀米粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=阿秀米粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1862691206824661390&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-021",
+      "fingerprint": "dfb732fb21716050",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "“粉超”今日开幕 94支队伍明日开战 千里赴桂 同台竞“味”",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "阿秀米粉",
+      "brand_id": "BR043",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "馋哭了!这碗凉拌粉,是桂林人的夏日记忆",
+      "summary": "2025年7月24日日前,记者来到叠彩区大河乡大村路口的阿秀米粉店,还未踏入店门,就被门外站着嗦粉的热闹...手机广西网",
+      "keywords": [
+        "阿秀",
+        "米粉店",
+        "桂林人",
+        "这碗",
+        "2025"
+      ],
+      "source": "新闻搜索",
+      "url": "https://v.gxnews.com.cn/sp/21824756",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=3186726853,2696839809&fm=253&fmt=auto&app=138&f=JPEG?w=869&h=500",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "阿秀米粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=阿秀米粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://v.gxnews.com.cn/sp/21824756",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-022",
+      "fingerprint": "2bc23845d0d05757",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "馋哭了!这碗凉拌粉,是桂林人的夏日记忆",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "阿秀米粉",
+      "brand_id": "BR043",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "2022天下米粉邀请大会助力“天下米粉IP”品牌升级",
+      "summary": "2022年11月13日米粉技艺非遗传承人现场助阵 一站式吃遍天下米粉 北京冬奥会行政总厨、《中餐厅第五季》特邀大师许东平、桂林米粉网红达人阿秀姐，以及《古香源》生榨米粉第三代传承人黄天玲、广西老友...人民资讯",
+      "keywords": [
+        "米粉",
+        "2022",
+        "天下",
+        "冬奥会",
+        "IP"
+      ],
+      "source": "新闻搜索",
+      "url": "https://baijiahao.baidu.com/s?id=1749381840995849338&wfr=spider&for=pc",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=3186726853,2696839809&fm=253&fmt=auto&app=138&f=JPEG?w=869&h=500",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "阿秀米粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=阿秀米粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 68,
+        "content": 70,
+        "composite": 48,
+        "level": "中",
+        "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+        "matched": "baidu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://baijiahao.baidu.com/s?id=1749381840995849338&wfr=spider&for=pc",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-023",
+      "fingerprint": "caca1f774728c5f8",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "2022天下米粉邀请大会助力“天下米粉IP”品牌升级",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "复记老友粉",
+      "brand_id": "BR079",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "依托东盟网红资源 推介南宁特色好物 东盟网红走南宁暨邕品出海...",
+      "summary": "2024年4月27日“众多东盟网红主播向东南亚消费者推介我们的老友粉,这对我们打开东盟市场有非常大的帮助。”广西南宁复记老友餐饮企业管理有限公司市场部经理梁铖表示,除了传统的老友粉,复记老友还生产极具南宁特色的老友粉利、老友粉虫、老友凉拌粉,相信“老友”的酸辣风味将受到东...南宁市人民政府",
+      "keywords": [
+        "老友",
+        "东盟",
+        "南宁",
+        "网红",
+        "..."
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.nanning.gov.cn/ywzx/bmdt/2024nbmdt/t5910272.html",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=344915468,1250143822&fm=253&fmt=auto&app=138&f=JPEG?w=1138&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "复记老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=复记老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.nanning.gov.cn/ywzx/bmdt/2024nbmdt/t5910272.html",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-024",
+      "fingerprint": "4b444ef452cd7906",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "依托东盟网红资源 推介南宁特色好物 东盟网红走南宁暨邕品出海...",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "复记老友粉",
+      "brand_id": "BR079",
+      "circle": "核心竞品",
+      "category": "高热度营销活动",
+      "title": "推进标准化品牌化建设 助力“邕味”产品走向市场 - 领导活动...",
+      "summary": "2023年12月18日12月16日,市长侯刚到广西—东盟经开区调研老友粉产业发展时强调,要深入学习贯彻落实习近平总书记视察广西时的重要讲话精神,立足资源禀赋和产业基础,推进标准化、品牌化建设,全力做大做强做优食品加工产业,助力更多“邕味”产品走向市场,为加快构建现代化产业体系、推...南宁市人民政府",
+      "keywords": [
+        "走向市场",
+        "邕味",
+        "...",
+        "12",
+        "品牌化"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.nanning.gov.cn/ywzx/ldhd/t5796892.html",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=344915468,1250143822&fm=253&fmt=auto&app=138&f=JPEG?w=1138&h=800",
+      "base_score": 2,
+      "score": 3,
+      "score_reason": "基础分=+2 × 圈层(核心竞品=1.5) × 时效(0天前/高热度营销活动=1.0)",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "复记老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=复记老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 77,
+        "composite": 73,
+        "level": "高",
+        "note": "政府官方网站，权威发布；正文信号微调：自评选/招商拉票(-15)（内容分 92→77）",
+        "matched": ".gov.cn",
+        "signals": [
+          {
+            "signal": "self_nomination",
+            "label": "自评选/招商拉票",
+            "adjust": -15,
+            "matched": [
+              "助力"
+            ]
+          }
+        ]
+      },
+      "verifiable": true,
+      "citation_url": "https://www.nanning.gov.cn/ywzx/ldhd/t5796892.html",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-025",
+      "fingerprint": "003d982aa01cdcc2",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "推进标准化品牌化建设 助力“邕味”产品走向市场 - 领导活动...",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "复记老友粉",
+      "brand_id": "BR079",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "爆红的美食之都大广西 真有这么好吃?",
+      "summary": "2018年8月30日成都锦里一般稳坐美食江山,最有名的复记老友粉、霞姐瓦煲饭、冰神糖水店都在这条路上。新浪时尚",
+      "keywords": [
+        "美食",
+        "爆红",
+        "2018",
+        "30",
+        "锦里"
+      ],
+      "source": "新闻搜索",
+      "url": "https://fashion.sina.com.cn/l/ts/rs/2018-08-30/1603/doc-ihikcahe7875446.shtml",
+      "published_at": "",
+      "hero_image": "https://img1.baidu.com/it/u=344915468,1250143822&fm=253&fmt=auto&app=138&f=JPEG?w=1138&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "复记老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=复记老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 82,
+        "content": 83,
+        "composite": 68,
+        "level": "中",
+        "note": "新浪网，主流门户新闻报道",
+        "matched": "sina.com.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://fashion.sina.com.cn/l/ts/rs/2018-08-30/1603/doc-ihikcahe7875446.shtml",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-026",
+      "fingerprint": "2ef108c15ac8b414",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "爆红的美食之都大广西 真有这么好吃?",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "共一老友粉",
+      "brand_id": "BR082",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "金秋送爽贺佳节 天涯此时共团圆",
+      "summary": "2025年9月18日除主会场演出外,晚会录制现场还精心打造了以“非遗+科技”为主题的沉浸式市集,琉璃净茶饮的东方风味、“飞跃南宁”AI虚拟漫游体验、刘三姐AI数字人智能互动等各具特色的体验项目格外引...南宁市人民政府",
+      "keywords": [
+        "AI",
+        "体验",
+        "送爽",
+        "2025",
+        "18"
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.nanning.gov.cn/ywzx/bmdt/2025nbmdt/t6419445.html",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=3940071408,4144610828&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "共一老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=共一老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 95,
+        "content": 92,
+        "composite": 87,
+        "level": "高",
+        "note": "政府官方网站，权威发布",
+        "matched": ".gov.cn",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.nanning.gov.cn/ywzx/bmdt/2025nbmdt/t6419445.html",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-027",
+      "fingerprint": "fd61166a23c61eac",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "金秋送爽贺佳节 天涯此时共团圆",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "共一老友粉",
+      "brand_id": "BR082",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "“一湾明月共潮生”第四届跨国中秋晚会在南宁举行",
+      "summary": "2024年9月14日老友粉、油茶等广西、南宁特色的美食品鉴,以及“点米成画”、茉莉花饰品DIY等非遗技艺和手...南宁日报",
+      "keywords": [
+        "南宁",
+        "一湾",
+        "共潮生",
+        "2024",
+        "14"
+      ],
+      "source": "新闻搜索",
+      "url": "http://www.nnrb.com.cn/nnrb/20240914/html/page_02_content_000.htm",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=3940071408,4144610828&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "共一老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=共一老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "http://www.nnrb.com.cn/nnrb/20240914/html/page_02_content_000.htm",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-028",
+      "fingerprint": "0d1ecc442a88c6bc",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "“一湾明月共潮生”第四届跨国中秋晚会在南宁举行",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "共一老友粉",
+      "brand_id": "BR082",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "桂黔再携手、共赴山与海丨贵南高铁全线开通运营 西部陆海新通道...",
+      "summary": "2023年9月1日旅客早上在南宁嗦老友粉,搭乘贵南高铁下午就能在重庆吃小面,十分便捷。广西新闻网",
+      "keywords": [
+        "贵南",
+        "高铁",
+        "桂黔",
+        "山与海",
+        "..."
+      ],
+      "source": "新闻搜索",
+      "url": "https://www.gxnews.com.cn/staticpages/20230901/newgx64f124a1-21267541.shtml",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=3940071408,4144610828&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "共一老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=共一老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.gxnews.com.cn/staticpages/20230901/newgx64f124a1-21267541.shtml",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-029",
+      "fingerprint": "9b7024af4bc99bff",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "桂黔再携手、共赴山与海丨贵南高铁全线开通运营 西部陆海新通道...",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "共一老友粉",
+      "brand_id": "BR082",
+      "circle": "核心竞品",
+      "category": "行业趋势/政策",
+      "title": "南宁嗨玩攻略!三月三,让我们一起打开活力南宁",
+      "summary": "2023年4月21日人均:吃粉15元起,吃饭80元起 ►共一老友共一老友作为南宁人从小吃到大的国营老友粉,直到现在,店里的阿姨们依旧是记忆中清一色白帽白上衣打扮,十分有年代感。 老友粉吃起来酸辣开胃,酸笋和豆豉是它的点睛之笔,尤其是那一股浓郁的“锅气”,是老友粉独有的味道,也让它区...搜狐网",
+      "keywords": [
+        "老友",
+        "元起",
+        "共一",
+        "南宁",
+        "2023"
+      ],
+      "source": "新闻搜索",
+      "url": "https://history.sohu.com/a/669031791_121614060",
+      "published_at": "",
+      "hero_image": "https://img0.baidu.com/it/u=3940071408,4144610828&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(0天前/行业趋势/政策=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "共一老友粉",
+        "source_type": "baidu_news",
+        "search_url": "https://www.baidu.com/s?tn=news&word=共一老友粉&rtt=4"
+      },
+      "source_credibility": {
+        "authority": 60,
+        "content": 78,
+        "composite": 47,
+        "level": "中",
+        "note": "搜狐，门户资讯",
+        "matched": "sohu.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://history.sohu.com/a/669031791_121614060",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-030",
+      "fingerprint": "d653fd45f68a4de8",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "南宁嗨玩攻略!三月三,让我们一起打开活力南宁",
+          "source": "新闻搜索",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "三品王",
+      "brand_id": "BR001",
+      "circle": "自身品牌",
+      "category": "渠道/扩张动作",
+      "title": "三品王北海铁山港南康店新店开业，进店消费送卤蛋",
+      "summary": "三品王北海铁山港南康店新店开业，活动6月27日-9月2日进店消费送卤蛋。",
+      "keywords": [
+        "卤蛋",
+        "铁山港",
+        "进店",
+        "南康",
+        "新店"
+      ],
+      "source": "AI搜索代理",
+      "url": "https://weibo.com/u/2625373521",
+      "published_at": "2026-07-13",
+      "hero_image": "https://img2.baidu.com/it/u=2714500187,47581603&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 2,
+      "score": 4,
+      "score_reason": "基础分=+2 × 圈层(自身品牌=2.0) × 时效(2天前/渠道/扩张动作=1.0)",
+      "rating_type": "正向评级",
+      "report_part": "part_1",
+      "metadata": {
+        "query": "三品王",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 55,
+        "content": 52,
+        "composite": 29,
+        "level": "低",
+        "note": "微博，社交平台 UGC 内容",
+        "matched": "weibo.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://weibo.com/u/2625373521",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-031",
+      "fingerprint": "f10f18341febbcb0",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "三品王北海铁山港南康店新店开业，进店消费送卤蛋",
+          "source": "AI搜索代理",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "组织/资本/供应链动态",
+      "title": "微念控股柳螺香，深化布局螺蛳粉供应链",
+      "summary": "微念控股餐饮连锁品牌「柳螺香」：广西柳螺香食品科技有限公司完成工商变更，微念由参股股东变更为控股股东，持股70%。",
+      "keywords": [
+        "微念",
+        "柳螺香",
+        "深化",
+        "食品科技",
+        "变更"
+      ],
+      "source": "AI搜索代理",
+      "url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+      "published_at": "2026-07-10",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(5天前/组织/资本/供应链动态=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-032",
+      "fingerprint": "a0c9dae87ce88d40",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "微念控股柳螺香，深化布局螺蛳粉供应链",
+          "source": "AI搜索代理",
+          "delta": null
+        }
+      ],
+      "related_urls": [
+        {
+          "url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+          "source": "新京报",
+          "title": "微念控股柳螺香，深化布局螺蛳粉供应链"
+        },
+        {
+          "url": "https://yule.sohu.com/a/722108679_120773210",
+          "source": "搜狐娱乐",
+          "title": "美腕回应李佳琦抖音认证消失丨蓝鲨消费早报9月20日"
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "total": 31,
+    "last_updated": "2026-07-15T15:15:12.678223"
+  }
+}

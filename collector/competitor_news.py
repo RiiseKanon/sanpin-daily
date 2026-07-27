@@ -1,17 +1,23 @@
 """
 Part 2 采集器: 竞品动态新闻搜索
 
-采集策略:
-  1. 逐层扩展: 核心竞品43→区域竞品69→场景竞品8→替代竞品80，直至Part 2 ≥5条动态
-  2. 纯品牌名搜索: 搜索时只使用品牌名，不附加品类限定词（如"米粉""螺蛳粉"等）
-     目的: 避免品类词过滤掉品牌在跨界合作、资本运作、人事变动等非品类维度的动态
-  3. 每个品牌搜索百度新闻，解析结果提取标题/摘要/链接/日期
-  4. 时效窗口: 5天（超过5天的内容自动丢弃）
-  5. 硬性规则: 不满5条则必须搜完全部201个品牌，不允许提前终止
+采集策略（V2.4.2 重构）:
+  1. 搜索代理模式: 百度对非浏览器 HTTP 请求返回安全验证页，直连搜索已不可用
+     → collect() 导出搜索任务到 _search_tasks.json，由外部 Agent 使用 WebSearch 执行
+     → 如果 _search_results.json 已存在且日期匹配，直接读取
+  2. 智能查询词（V2.4.1）:
+     - 长品牌名（≥4字）→ 纯品牌名搜索（足够独特）
+     - 短品牌名（≤3字）→ 附加品类限定词（如"秋菊 螺蛳粉"），避免噪音
+  3. 时效窗口: 7 天（超过 7 天的内容在 _inject_external_searches 中过滤）
+  4. 硬性规则: 不满 5 条则必须搜完全部 201 个品牌，不允许提前终止
+  5. 多层防线:
+     - 搜索代理层: 时间过滤参数 + 要求 published_at 必须填写
+     - 注入层: _inject_external_searches 做无日期/过期/旧年份三重过滤
+     - 流水线层: _is_stale 对无日期内容不再放行
+     - 相关性层: _filter_irrelevant 要求标题必须包含品牌名
 
 搜索任务清单格式:
-  {"brand_name": "尝不忘", "brand_id": "BR002", "circle": "核心竞品", "query": "尝不忘"}
-  query = 纯品牌名，不加任何限定词
+  {"name": "秋菊", "id": "BRxxx", "circle": "核心竞品", "query": "秋菊 螺蛳粉"}
 """
 import asyncio
 import httpx
@@ -42,7 +48,9 @@ class CompetitorNewsCollector(BaseCollector):
     def build_search_tasks(self, target_date: str) -> list[dict]:
         """
         生成搜索任务清单
-        每个品牌一个任务，query = 纯品牌名，不附加品类词
+        每个品牌一个任务，query 由 _build_smart_query 智能生成：
+        - 长品牌名（≥4字）：纯品牌名搜索
+        - 短品牌名/常见词（≤3字）：自动附加品类词，避免噪音
         """
         all_brands = config.get_all_brands_by_circle()
         tasks = []
@@ -56,66 +64,82 @@ class CompetitorNewsCollector(BaseCollector):
                     "name": brand["name"],
                     "id": brand["id"],
                     "circle": circle,
-                    "query": brand["name"],  # 纯品牌名，不加品类限定词
+                    "query": self._build_smart_query(brand),
                     "searched": False,
                 })
 
-        logger.info(f"[竞品动态] 生成 {len(tasks)} 个搜索任务（纯品牌名模式）")
+        smart_count = sum(1 for t in tasks if t["query"] != t["name"])
+        logger.info(f"[竞品动态] 生成 {len(tasks)} 个搜索任务（{smart_count} 个附加品类词）")
         return tasks
 
     async def collect(self, target_date: str) -> list[RawItem]:
         """
-        逐层执行竞品搜索，直至满足最低条数或搜完全部品牌。
+        竞品动态采集 — 搜索代理模式（V2.4.2）
 
-        每层内的品牌并行搜索（控制并发数），层间串行。
+        百度对非浏览器 HTTP 请求返回安全验证页，直连搜索已不可用。
+        改为纯搜索代理模式：
+        1. collect() 导出搜索任务清单到 _search_tasks.json
+        2. 外部 Agent 使用 WebSearch 工具执行搜索
+        3. Agent 将结果写入 _search_results.json
+        4. daily_job.py 的 _inject_external_searches() 读取并注入流水线
+
+        注：如果 _search_results.json 已存在且日期匹配，直接读取返回。
         """
-        all_brands = config.get_all_brands_by_circle()
-        layer_order = ["核心竞品", "区域竞品", "场景竞品", "替代竞品"]
-        all_items = []
-        total_searched = 0
+        import json as _json
+        result_file = config.DATA_DIR / "_search_results.json"
 
-        for circle in layer_order:
-            brands = all_brands.get(circle, [])
-            if not brands:
-                continue
+        # 如果有已准备好的搜索结果，直接读取
+        if result_file.exists():
+            try:
+                data = _json.loads(result_file.read_text(encoding="utf-8"))
+                if data.get("target_date") == target_date:
+                    items = []
+                    for r in data.get("results", []):
+                        item = RawItem(
+                            source="AI搜索代理",
+                            url=r.get("url", ""),
+                            title=r.get("title", ""),
+                            content=r.get("summary", ""),
+                            published_at=r.get("published_at", target_date),
+                            brand_name=r.get("brand_name", ""),
+                            brand_id=r.get("brand_id", ""),
+                            circle=r.get("circle", ""),
+                            category=r.get("category", "行业趋势/政策"),
+                            keywords=r.get("keywords", []),
+                            metadata={"query": r.get("brand_name", ""), "source_type": "ai_websearch"},
+                        )
+                        items.append(item)
+                    logger.info(f"[竞品动态] 从 _search_results.json 读取 {len(items)} 条结果")
+                    return items
+            except Exception as e:
+                logger.warning(f"[竞品动态] 读取搜索结果失败: {e}")
 
-            logger.info(f"[竞品动态] 开始搜索 {circle} 层（{len(brands)} 个品牌）...")
+        # 导出搜索任务供外部 Agent 使用
+        tasks = self.build_search_tasks(target_date)
+        task_file = config.DATA_DIR / "_search_tasks.json"
+        task_file.write_text(_json.dumps({
+            "target_date": target_date,
+            "total_tasks": len(tasks),
+            "tasks": tasks,
+            "instruction": (
+                "对每个品牌的 query 使用 WebSearch 执行搜索。"
+                "每个 query 搜 3-5 条相关新闻。"
+                "⚠️ 时效要求：只收录近 7 天内发布的新闻，标题中含「2020年」「2021年」「2022年」「2023年」「2024年」"
+                "或摘要无明显时效标识的旧闻一律丢弃。"
+                "每条结果需包含: brand_name, brand_id, circle, title, url, summary, published_at(YYYY-MM-DD格式), category。"
+                "published_at 无法确定具体日期的条目不要收录。"
+                "将结果写入 data/_search_results.json。"
+            ),
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
 
-            # 并行搜索该层品牌，控制并发为 5
-            sem = asyncio.Semaphore(5)
-
-            async def search_one(brand: dict) -> list[RawItem]:
-                async with sem:
-                    return await self._search_brand(brand, target_date)
-
-            tasks = [search_one(b) for b in brands]
-            results = await asyncio.gather(*tasks, return_exceptions=True)
-
-            layer_items = []
-            for i, result in enumerate(results):
-                if isinstance(result, list):
-                    layer_items.extend(result)
-                elif isinstance(result, Exception):
-                    logger.debug(f"[{brands[i]['name']}] 搜索异常: {result}")
-
-            total_searched += len(brands)
-            all_items.extend(layer_items)
-
-            logger.info(f"[竞品动态] {circle} 层完成: {len(layer_items)} 条动态（已搜 {total_searched} 个品牌）")
-
-            # 满足最低条数可提前终止
-            if len(all_items) >= self.TARGET_MIN_DYNAMICS:
-                logger.info(f"[竞品动态] 已达到最低 {self.TARGET_MIN_DYNAMICS} 条目标，提前终止搜索")
-                break
-
-        logger.info(f"[竞品动态] 采集完成: 共 {len(all_items)} 条，搜索 {total_searched} 个品牌")
-        return all_items
+        logger.info(f"[竞品动态] 已导出 {len(tasks)} 个搜索任务到 _search_tasks.json（等待搜索代理执行）")
+        return []
 
     async def _search_brand(self, brand: dict, target_date: str) -> list[RawItem]:
         """
         搜索单个品牌的百度新闻，解析结果。
 
-        搜索词: 品牌名（纯品牌名，不加品类限定词）
+        搜索词: 由 _build_smart_query 智能生成（短品牌名附加品类词）
         解析百度新闻搜索结果页，提取标题/链接/摘要/日期
         """
         items = []
@@ -123,8 +147,8 @@ class CompetitorNewsCollector(BaseCollector):
         bid = brand.get("id", "")
 
         try:
-            # 构建百度新闻搜索 URL
-            query = name
+            # 构建百度新闻搜索 URL（智能查询词）
+            query = self._build_smart_query(brand)
             url = f"https://www.baidu.com/s?tn=news&word={query}&rtt={config.BAIDU_TIME_FILTER}"
             headers = {
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -167,7 +191,8 @@ class CompetitorNewsCollector(BaseCollector):
                     category=category,
                     keywords=extract_keywords(title + " " + summary),
                     metadata={
-                        "query": name,
+                        "query": query,
+                        "raw_name": name,
                         "source_type": "baidu_news",
                         "search_url": url,
                     },
@@ -317,6 +342,83 @@ class CompetitorNewsCollector(BaseCollector):
     def _classify_category(self, query: str) -> str:
         """根据搜索词判断热点类别（保留向后兼容）"""
         return self._classify_title(query)
+
+    # ========================================================================
+    # 智能查询词构建（V2.4.1）
+    # ========================================================================
+
+    # 品牌名 ≤3 字 或 匹配以下常见词列表 → 附加品类限定词
+    _GENERIC_NAME_PATTERNS = [
+        "秋菊", "菊花", "春天", "夏天", "秋天", "冬天",
+        "大碗", "小碗", "一口", "三品", "回味", "寻味",
+        "好味", "美味", "品味", "香", "辣", "酸", "甜",
+        "阳光", "彩虹", "蓝天", "白云", "星星", "月亮",
+        "故乡", "家乡", "老家", "外婆", "妈妈",
+    ]
+
+    # 品牌品类映射 — 从品牌库 category 字段提取
+    _CATEGORY_SUFFIX = {
+        "米粉": ["米粉", "米线", "粉店"],
+        "螺蛳粉": ["螺蛳粉"],
+        "面馆": ["面馆", "面条", "拌面"],
+        "快餐": ["快餐", "小吃", "餐饮"],
+        "茶饮": ["茶饮", "奶茶", "咖啡"],
+        "烘焙": ["烘焙", "面包", "甜点"],
+        "酸辣粉": ["酸辣粉", "粉面"],
+        "饺子": ["饺子", "馄饨"],
+        "卤味": ["卤味", "卤菜"],
+    }
+
+    def _build_smart_query(self, brand: dict) -> str:
+        """
+        为品牌构建智能搜索查询词。
+
+        策略：
+        1. 品牌名 ≥4 字 → 纯品牌名（足够独特，不需附加词）
+        2. 品牌名 ≤3 字 或 匹配常见词模式 → 附加品类限定词
+           - 优先使用品牌库中的 category 字段
+           - 回退到品牌名所在圈层的典型品类
+        3. 附加格式: "品牌名 品类词"（如 "秋菊 螺蛳粉"）
+
+        目的：减少因品牌名与常见词重叠而产生的噪音（如"秋菊"→花而非餐饮）
+        """
+        name = brand.get("name", "")
+        if not name:
+            return ""
+
+        # 长品牌名（≥4字）足够独特，纯品牌名搜索
+        if len(name) >= 4:
+            return name
+
+        # 短品牌名或常见词 → 附加品类限定词
+        category = brand.get("category", "")
+
+        # 先尝试精确匹配
+        suffixes = self._CATEGORY_SUFFIX.get(category, [])
+        if suffixes:
+            return f"{name} {suffixes[0]}"
+
+        # 复合品类（如 "米粉（螺蛳粉）"）→ 取括号内的核心品类
+        if category:
+            for key, vals in self._CATEGORY_SUFFIX.items():
+                if key in category:
+                    return f"{name} {vals[0]}"
+            # 品类映射未命中但有 category 值 → 直接用 category 的第一个词
+            main_cat = category.split("（")[0].split("(")[0].strip()
+            if main_cat:
+                return f"{name} {main_cat}"
+
+        # 品牌库无 category，根据圈层推断
+        circle = brand.get("circle", "")
+        if circle in ("核心竞品", "区域竞品"):
+            # 粉面米线类为主
+            return f"{name} 米粉"
+        elif circle == "场景竞品":
+            return f"{name} 快餐"
+        elif circle == "替代竞品":
+            return f"{name} 餐饮"
+
+        return name
 
     async def close(self):
         await self.client.aclose()

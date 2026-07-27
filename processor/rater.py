@@ -94,13 +94,14 @@ class EventRater:
         """
         circle = event.get("circle", "")
         brand_id = event.get("brand_id", "")
+        category = event.get("category", "")
 
         # Part 1: 自身品牌
         if circle == "自身品牌" or brand_id == "BR001":
             return "part_1"
 
-        # Part 3: 行业趋势（无具体品牌的事件）
-        if not brand_id and not circle:
+        # Part 3: 行业趋势/政策（V2.4.3: 同时检查 category 和 circle，兼容多种数据源）
+        if category == "行业趋势/政策" or circle == "行业趋势" or (not brand_id and not circle):
             return "part_3"
 
         # Part 2: 竞品动态

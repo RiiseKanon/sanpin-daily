@@ -1,0 +1,338 @@
+{
+  "date": "2026-07-23",
+  "generated_at": "2026-07-23",
+  "part_1": {
+    "title": "自身舆情监控",
+    "rating_name": "正向评级",
+    "rating_icon": "🌟",
+    "events": [
+      {
+        "brand_name": "三品王",
+        "brand_id": "BR001",
+        "circle": "自身品牌",
+        "category": "高热度营销活动",
+        "title": "三品王27周年老店焕新，一碗牛肉粉见证广西烟火记忆",
+        "summary": "广西广播电视台「八桂搜宝」走进南宁桃源店，报道三品王27周年老店焕新。坚守老汤原味，复刻当年手工工艺，一碗地道牛肉粉藏着几代人的家乡味道。",
+        "keywords": [
+          "27",
+          "焕新",
+          "老店",
+          "三品",
+          "牛肉"
+        ],
+        "source": "AI搜索代理",
+        "url": "https://news.gxtv.cn/article/detail_048b7cba2b95449d95db010f3cf97666.html",
+        "published_at": "2026-07-21",
+        "hero_image": "https://img2.baidu.com/it/u=2714500187,47581603&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+        "base_score": 2,
+        "score": 3,
+        "score_reason": "基础分=+2 × 圈层(自身品牌=2.0) × 时效(2天前/高热度营销活动=0.8) → 钳位至 +3",
+        "rating_type": "正向评级",
+        "report_part": "part_1",
+        "metadata": {
+          "query": "三品王",
+          "source_type": "ai_websearch"
+        },
+        "source_credibility": {
+          "authority": 88,
+          "content": 86,
+          "composite": 76,
+          "level": "高",
+          "note": "广西广播电视台，省级官方媒体，权威报道",
+          "matched": "gxtv.cn",
+          "signals": []
+        },
+        "verifiable": true,
+        "citation_url": "https://news.gxtv.cn/article/detail_048b7cba2b95449d95db010f3cf97666.html",
+        "citation_tier": "citable",
+        "link_gated": false,
+        "gate_note": "",
+        "event_id": "EVT-2026-07-23-001",
+        "fingerprint": "02db5be791807dbf",
+        "status": "ACTIVE",
+        "first_seen": "2026-07-23",
+        "last_seen": "2026-07-23",
+        "snapshots": [
+          {
+            "date": "2026-07-23",
+            "type": "NEW",
+            "title": "三品王27周年老店焕新，一碗牛肉粉见证广西烟火记忆",
+            "source": "AI搜索代理",
+            "delta": null
+          },
+          {
+            "date": "2026-07-23",
+            "type": "UPDATE",
+            "title": "三品王27周年老店焕新，一碗牛肉粉见证广西烟火记忆",
+            "source": "AI搜索代理",
+            "delta": ""
+          }
+        ],
+        "updated_at": "2026-07-23T18:09:04.979316"
+      }
+    ],
+    "empty": false
+  },
+  "part_2": {
+    "title": "竞品动态",
+    "rating_name": "威胁评级",
+    "rating_icon": "⚔️",
+    "by_circle": {
+      "核心竞品": [],
+      "区域竞品": [],
+      "场景竞品": [],
+      "替代竞品": []
+    },
+    "events": [],
+    "empty": true
+  },
+  "part_3": {
+    "title": "行业趋势/政策",
+    "rating_name": "利好评级",
+    "rating_icon": "📈",
+    "events": [
+      {
+        "brand_name": "行业趋势",
+        "brand_id": "",
+        "circle": "行业趋势",
+        "category": "行业趋势/政策",
+        "title": "螺蛳粉行业重新洗牌：袋装销量两位数下跌，线下门店逆势扩张",
+        "summary": "2026Q2传统零售渠道方便速食销售额同比下降11.04%，螺蛳粉连续两季度两位数下跌（Q2同比-14.5%）。但线下实体店逆势增长，全国螺蛳粉门店超5万家。",
+        "keywords": [
+          "螺蛳",
+          "线下",
+          "两位数",
+          "门店",
+          "逆势"
+        ],
+        "source": "AI搜索代理",
+        "url": "http://finance.sina.com.cn/wm/2026-07-19/doc-iniiiwie8277432.shtml",
+        "published_at": "2026-07-19",
+        "hero_image": "",
+        "base_score": 1,
+        "score": 0,
+        "score_reason": "基础分=+1 × 圈层(行业趋势=0.8) × 时效(4天前/行业趋势/政策=0.5) → 钳位至 +0",
+        "rating_type": "利好评级",
+        "report_part": "part_3",
+        "metadata": {
+          "query": "行业趋势",
+          "source_type": "ai_websearch"
+        },
+        "source_credibility": {
+          "authority": 82,
+          "content": 83,
+          "composite": 68,
+          "level": "中",
+          "note": "新浪网，主流门户新闻报道",
+          "matched": "sina.com.cn",
+          "signals": []
+        },
+        "verifiable": true,
+        "citation_url": "http://finance.sina.com.cn/wm/2026-07-19/doc-iniiiwie8277432.shtml",
+        "citation_tier": "citable",
+        "link_gated": false,
+        "gate_note": "",
+        "event_id": "EVT-2026-07-23-002",
+        "fingerprint": "265afc2cd37ebc75",
+        "status": "ACTIVE",
+        "first_seen": "2026-07-23",
+        "last_seen": "2026-07-23",
+        "snapshots": [
+          {
+            "date": "2026-07-23",
+            "type": "NEW",
+            "title": "螺蛳粉行业重新洗牌：袋装销量两位数下跌，线下门店逆势扩张",
+            "source": "AI搜索代理",
+            "delta": null
+          },
+          {
+            "date": "2026-07-23",
+            "type": "UPDATE",
+            "title": "螺蛳粉行业重新洗牌：袋装销量两位数下跌，线下门店逆势扩张",
+            "source": "AI搜索代理",
+            "delta": ""
+          }
+        ],
+        "updated_at": "2026-07-23T18:09:04.983652"
+      },
+      {
+        "brand_name": "行业趋势",
+        "brand_id": "",
+        "circle": "行业趋势",
+        "category": "行业趋势/政策",
+        "title": "刚需化、集群化、国际化：螺蛳粉行业迈入价值深耕阶段",
+        "summary": "截至2026年6月，国内螺蛳粉相关企业存量达2.99万家。行业从规模扩张转向价值深耕，品牌化、标准化和国际化成为三大趋势。",
+        "keywords": [
+          "螺蛳",
+          "深耕",
+          "国际化",
+          "需化",
+          "2026"
+        ],
+        "source": "AI搜索代理",
+        "url": "https://baijiahao.baidu.com/s?id=1870744293244303753",
+        "published_at": "2026-07-15",
+        "hero_image": "",
+        "base_score": 1,
+        "score": 0,
+        "score_reason": "基础分=+1 × 圈层(行业趋势=0.8) × 时效(8天前/行业趋势/政策=0.5) → 钳位至 +0",
+        "rating_type": "利好评级",
+        "report_part": "part_3",
+        "metadata": {
+          "query": "行业趋势",
+          "source_type": "ai_websearch"
+        },
+        "source_credibility": {
+          "authority": 68,
+          "content": 70,
+          "composite": 48,
+          "level": "中",
+          "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）",
+          "matched": "baidu.com",
+          "signals": []
+        },
+        "verifiable": true,
+        "citation_url": "https://baijiahao.baidu.com/s?id=1870744293244303753",
+        "citation_tier": "citable",
+        "link_gated": false,
+        "gate_note": "",
+        "event_id": "EVT-2026-07-23-003",
+        "fingerprint": "9d2e459b7267f4a8",
+        "status": "NEW",
+        "first_seen": "2026-07-23",
+        "last_seen": "2026-07-23",
+        "snapshots": [
+          {
+            "date": "2026-07-23",
+            "type": "NEW",
+            "title": "刚需化、集群化、国际化：螺蛳粉行业迈入价值深耕阶段",
+            "source": "AI搜索代理",
+            "delta": null
+          }
+        ]
+      },
+      {
+        "brand_name": "行业趋势",
+        "brand_id": "",
+        "circle": "行业趋势",
+        "category": "行业趋势/政策",
+        "title": "2026年米粉行业趋势洞察：预包装市场427亿，小众风味崛起",
+        "summary": "2025年中国预包装米粉市场规模达427亿元，2026Q1消费者调研显示68.3%关注配料表清洁度。小众风味米粉市场正在崛起。",
+        "keywords": [
+          "米粉",
+          "427",
+          "风味",
+          "包装",
+          "崛起"
+        ],
+        "source": "AI搜索代理",
+        "url": "https://baijiahao.baidu.com/s?id=1870584226226459536",
+        "published_at": "2026-07-13",
+        "hero_image": "",
+        "base_score": 1,
+        "score": 0,
+        "score_reason": "基础分=+1 × 圈层(行业趋势=0.8) × 时效(10天前/行业趋势/政策=0.5) → 钳位至 +0",
+        "rating_type": "利好评级",
+        "report_part": "part_3",
+        "metadata": {
+          "query": "行业趋势",
+          "source_type": "ai_websearch"
+        },
+        "source_credibility": {
+          "authority": 68,
+          "content": 78,
+          "composite": 53,
+          "level": "中",
+          "note": "百度搜索聚合（含文库/百科等结构化内容，与百家号碎片不同）；正文信号微调：披露方法论/数据来源(+8)（内容分 70→78）",
+          "matched": "baidu.com",
+          "signals": [
+            {
+              "signal": "methodology_disclosed",
+              "label": "披露方法论/数据来源",
+              "adjust": 8,
+              "matched": [
+                "调研显示"
+              ]
+            }
+          ]
+        },
+        "verifiable": true,
+        "citation_url": "https://baijiahao.baidu.com/s?id=1870584226226459536",
+        "citation_tier": "citable",
+        "link_gated": false,
+        "gate_note": "",
+        "event_id": "EVT-2026-07-23-004",
+        "fingerprint": "85d4ac45edafb7d4",
+        "status": "NEW",
+        "first_seen": "2026-07-23",
+        "last_seen": "2026-07-23",
+        "snapshots": [
+          {
+            "date": "2026-07-23",
+            "type": "NEW",
+            "title": "2026年米粉行业趋势洞察：预包装市场427亿，小众风味崛起",
+            "source": "AI搜索代理",
+            "delta": null
+          }
+        ]
+      }
+    ],
+    "empty": false
+  },
+  "part_leads": {
+    "title": "需核实线索",
+    "rating_icon": "🔍",
+    "events": [],
+    "empty": true,
+    "note": "以下动态来源不可核实或可信度低，仅作跟进线索，请勿直接用于决策引证。"
+  },
+  "part_4": {
+    "title": "今日焦点品牌",
+    "rating_icon": "📖",
+    "focus_brand": {
+      "name": "张记桂林米粉",
+      "circle": "核心竞品",
+      "rotation_index": 16,
+      "category": "米粉（桂林米粉）",
+      "price_zone": "10-15元",
+      "store_count": "20+",
+      "headquarters": "桂林",
+      "founded": "2005年",
+      "regions": "桂林",
+      "confidence": "中",
+      "level": 3,
+      "overlap_count": 3,
+      "overlap_dimensions": [
+        "价格带",
+        "区域",
+        "场景"
+      ],
+      "overlap_analysis": "价格带重叠（10-15元），面向同一消费群体；主营区域重叠（广西），门店覆盖范围存在正面竞争；消费场景一致（到店+外卖双渠道快餐），争夺同一批客流。重叠度 3/4，核心竞品 Level 3。",
+      "recent_news": [],
+      "risk_assessment": "📊 中等威胁：三维重叠。门店数 20+，规模中等，重点监控其区域扩张动态。",
+      "ai_analysis": "张记桂林米粉创立于2005年，是米粉（桂林米粉）领域代表性连锁品牌，总部位于桂林，全国门店约20+家，主营桂林市场。\n\n经营方式：以加盟连锁模式为主，依托标准化供应链实现快速复制。\n\n出品特点：以米粉为核心产品线；客单价约10-15元，定位大众快餐消费。\n\n— 分析基于品牌库数据（规则引擎），仅供参考"
+    },
+    "empty": false
+  },
+  "part_5": {
+    "title": "品牌库变动简报",
+    "rating_icon": "📋",
+    "empty": true
+  },
+  "stats": {
+    "total_events": 4,
+    "new_events": 2,
+    "active_events": 2,
+    "escalated_events": 0,
+    "total_rankings": 0,
+    "ranking_success": 0,
+    "ranking_failed": 0
+  },
+  "pipeline_stats": {
+    "candidates": 0,
+    "new_events": 0,
+    "updated_events": 0,
+    "maintenance_updates": 0,
+    "total_events_in_store": 4
+  }
+}

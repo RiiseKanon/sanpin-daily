@@ -1,0 +1,1407 @@
+{
+  "target_date": "2026-07-23",
+  "total_tasks": 200,
+  "tasks": [
+    {
+      "name": "尝不忘",
+      "id": "BR002",
+      "circle": "核心竞品",
+      "query": "尝不忘 米粉",
+      "searched": false
+    },
+    {
+      "name": "粉之都",
+      "id": "BR003",
+      "circle": "核心竞品",
+      "query": "粉之都 米粉",
+      "searched": false
+    },
+    {
+      "name": "柳螺香",
+      "id": "BR004",
+      "circle": "核心竞品",
+      "query": "柳螺香 米粉",
+      "searched": false
+    },
+    {
+      "name": "螺公堂",
+      "id": "BR005",
+      "circle": "核心竞品",
+      "query": "螺公堂 米粉",
+      "searched": false
+    },
+    {
+      "name": "融柳大铁牛螺蛳粉",
+      "id": "BR019",
+      "circle": "核心竞品",
+      "query": "融柳大铁牛螺蛳粉",
+      "searched": false
+    },
+    {
+      "name": "王味螺",
+      "id": "BR025",
+      "circle": "核心竞品",
+      "query": "王味螺 米粉",
+      "searched": false
+    },
+    {
+      "name": "螺小丰螺蛳粉",
+      "id": "BR027",
+      "circle": "核心竞品",
+      "query": "螺小丰螺蛳粉",
+      "searched": false
+    },
+    {
+      "name": "柳盛",
+      "id": "BR028",
+      "circle": "核心竞品",
+      "query": "柳盛 米粉",
+      "searched": false
+    },
+    {
+      "name": "秋菊",
+      "id": "BR030",
+      "circle": "核心竞品",
+      "query": "秋菊 米粉",
+      "searched": false
+    },
+    {
+      "name": "柳螺源",
+      "id": "BR031",
+      "circle": "核心竞品",
+      "query": "柳螺源 米粉",
+      "searched": false
+    },
+    {
+      "name": "欢螺颂",
+      "id": "BR032",
+      "circle": "核心竞品",
+      "query": "欢螺颂 米粉",
+      "searched": false
+    },
+    {
+      "name": "崇善米粉",
+      "id": "BR041",
+      "circle": "核心竞品",
+      "query": "崇善米粉",
+      "searched": false
+    },
+    {
+      "name": "日头火",
+      "id": "BR042",
+      "circle": "核心竞品",
+      "query": "日头火 米粉",
+      "searched": false
+    },
+    {
+      "name": "阿秀米粉",
+      "id": "BR043",
+      "circle": "核心竞品",
+      "query": "阿秀米粉",
+      "searched": false
+    },
+    {
+      "name": "老盐街桂林米粉",
+      "id": "BR045",
+      "circle": "核心竞品",
+      "query": "老盐街桂林米粉",
+      "searched": false
+    },
+    {
+      "name": "张记桂林米粉",
+      "id": "BR046",
+      "circle": "核心竞品",
+      "query": "张记桂林米粉",
+      "searched": false
+    },
+    {
+      "name": "云天牛米粉",
+      "id": "BR051",
+      "circle": "核心竞品",
+      "query": "云天牛米粉",
+      "searched": false
+    },
+    {
+      "name": "复记老友粉",
+      "id": "BR079",
+      "circle": "核心竞品",
+      "query": "复记老友粉",
+      "searched": false
+    },
+    {
+      "name": "舒记老友粉",
+      "id": "BR080",
+      "circle": "核心竞品",
+      "query": "舒记老友粉",
+      "searched": false
+    },
+    {
+      "name": "天福香老友粉",
+      "id": "BR081",
+      "circle": "核心竞品",
+      "query": "天福香老友粉",
+      "searched": false
+    },
+    {
+      "name": "共一老友粉",
+      "id": "BR082",
+      "circle": "核心竞品",
+      "query": "共一老友粉",
+      "searched": false
+    },
+    {
+      "name": "钟姐老友粉",
+      "id": "BR083",
+      "circle": "核心竞品",
+      "query": "钟姐老友粉",
+      "searched": false
+    },
+    {
+      "name": "玉林牛巴粉",
+      "id": "BR084",
+      "circle": "核心竞品",
+      "query": "玉林牛巴粉",
+      "searched": false
+    },
+    {
+      "name": "钦州猪脚粉",
+      "id": "BR085",
+      "circle": "核心竞品",
+      "query": "钦州猪脚粉",
+      "searched": false
+    },
+    {
+      "name": "宾阳酸粉",
+      "id": "BR086",
+      "circle": "核心竞品",
+      "query": "宾阳酸粉",
+      "searched": false
+    },
+    {
+      "name": "北海海鲜粉",
+      "id": "BR087",
+      "circle": "核心竞品",
+      "query": "北海海鲜粉",
+      "searched": false
+    },
+    {
+      "name": "梧州上汤河粉",
+      "id": "BR088",
+      "circle": "核心竞品",
+      "query": "梧州上汤河粉",
+      "searched": false
+    },
+    {
+      "name": "百色卷粉",
+      "id": "BR089",
+      "circle": "核心竞品",
+      "query": "百色卷粉",
+      "searched": false
+    },
+    {
+      "name": "鹿回香桂林米粉",
+      "id": "BR090",
+      "circle": "核心竞品",
+      "query": "鹿回香桂林米粉",
+      "searched": false
+    },
+    {
+      "name": "包司令",
+      "id": "BR119",
+      "circle": "核心竞品",
+      "query": "包司令 快餐",
+      "searched": false
+    },
+    {
+      "name": "粉派",
+      "id": "BR121",
+      "circle": "核心竞品",
+      "query": "粉派 米粉",
+      "searched": false
+    },
+    {
+      "name": "牛状元",
+      "id": "BR125",
+      "circle": "核心竞品",
+      "query": "牛状元 粉面",
+      "searched": false
+    },
+    {
+      "name": "老友记米粉",
+      "id": "BR126",
+      "circle": "核心竞品",
+      "query": "老友记米粉",
+      "searched": false
+    },
+    {
+      "name": "桂小厨米粉",
+      "id": "BR127",
+      "circle": "核心竞品",
+      "query": "桂小厨米粉",
+      "searched": false
+    },
+    {
+      "name": "漓江源米粉",
+      "id": "BR128",
+      "circle": "核心竞品",
+      "query": "漓江源米粉",
+      "searched": false
+    },
+    {
+      "name": "螺湘百味",
+      "id": "BR172",
+      "circle": "核心竞品",
+      "query": "螺湘百味",
+      "searched": false
+    },
+    {
+      "name": "粉亿家",
+      "id": "BR173",
+      "circle": "核心竞品",
+      "query": "粉亿家 米粉",
+      "searched": false
+    },
+    {
+      "name": "桂味源",
+      "id": "BR174",
+      "circle": "核心竞品",
+      "query": "桂味源 米粉",
+      "searched": false
+    },
+    {
+      "name": "粉嘟嘟",
+      "id": "BR175",
+      "circle": "核心竞品",
+      "query": "粉嘟嘟 米粉",
+      "searched": false
+    },
+    {
+      "name": "桂人来",
+      "id": "BR176",
+      "circle": "核心竞品",
+      "query": "桂人来 米粉",
+      "searched": false
+    },
+    {
+      "name": "八桂米粉",
+      "id": "BR177",
+      "circle": "核心竞品",
+      "query": "八桂米粉",
+      "searched": false
+    },
+    {
+      "name": "螺状元",
+      "id": "BR178",
+      "circle": "核心竞品",
+      "query": "螺状元 米粉",
+      "searched": false
+    },
+    {
+      "name": "寻味广西",
+      "id": "BR182",
+      "circle": "核心竞品",
+      "query": "寻味广西",
+      "searched": false
+    },
+    {
+      "name": "无名缘米粉",
+      "id": "BR006",
+      "circle": "区域竞品",
+      "query": "无名缘米粉",
+      "searched": false
+    },
+    {
+      "name": "蒙自源",
+      "id": "BR007",
+      "circle": "区域竞品",
+      "query": "蒙自源 米粉",
+      "searched": false
+    },
+    {
+      "name": "五谷渔粉",
+      "id": "BR008",
+      "circle": "区域竞品",
+      "query": "五谷渔粉",
+      "searched": false
+    },
+    {
+      "name": "贵凤凰",
+      "id": "BR009",
+      "circle": "区域竞品",
+      "query": "贵凤凰 米粉",
+      "searched": false
+    },
+    {
+      "name": "俏凤凰",
+      "id": "BR010",
+      "circle": "区域竞品",
+      "query": "俏凤凰 米粉",
+      "searched": false
+    },
+    {
+      "name": "杨裕兴",
+      "id": "BR012",
+      "circle": "区域竞品",
+      "query": "杨裕兴 米粉",
+      "searched": false
+    },
+    {
+      "name": "万方圆",
+      "id": "BR013",
+      "circle": "区域竞品",
+      "query": "万方圆 米粉",
+      "searched": false
+    },
+    {
+      "name": "大弗兰",
+      "id": "BR014",
+      "circle": "区域竞品",
+      "query": "大弗兰 米粉",
+      "searched": false
+    },
+    {
+      "name": "啊臻味道",
+      "id": "BR015",
+      "circle": "区域竞品",
+      "query": "啊臻味道",
+      "searched": false
+    },
+    {
+      "name": "吴佳",
+      "id": "BR016",
+      "circle": "区域竞品",
+      "query": "吴佳 米粉",
+      "searched": false
+    },
+    {
+      "name": "统桶发卤粉王",
+      "id": "BR017",
+      "circle": "区域竞品",
+      "query": "统桶发卤粉王",
+      "searched": false
+    },
+    {
+      "name": "花小小新疆炒米粉",
+      "id": "BR018",
+      "circle": "区域竞品",
+      "query": "花小小新疆炒米粉",
+      "searched": false
+    },
+    {
+      "name": "魔都三兄弟",
+      "id": "BR020",
+      "circle": "区域竞品",
+      "query": "魔都三兄弟",
+      "searched": false
+    },
+    {
+      "name": "莱得快酸辣粉",
+      "id": "BR021",
+      "circle": "区域竞品",
+      "query": "莱得快酸辣粉",
+      "searched": false
+    },
+    {
+      "name": "姐弟俩土豆粉",
+      "id": "BR022",
+      "circle": "区域竞品",
+      "query": "姐弟俩土豆粉",
+      "searched": false
+    },
+    {
+      "name": "周真真江西米粉",
+      "id": "BR023",
+      "circle": "区域竞品",
+      "query": "周真真江西米粉",
+      "searched": false
+    },
+    {
+      "name": "阿香米线",
+      "id": "BR024",
+      "circle": "区域竞品",
+      "query": "阿香米线",
+      "searched": false
+    },
+    {
+      "name": "螺鼎记",
+      "id": "BR026",
+      "circle": "区域竞品",
+      "query": "螺鼎记 米粉",
+      "searched": false
+    },
+    {
+      "name": "螺蛳粉先生",
+      "id": "BR029",
+      "circle": "区域竞品",
+      "query": "螺蛳粉先生",
+      "searched": false
+    },
+    {
+      "name": "乔杉杉",
+      "id": "BR033",
+      "circle": "区域竞品",
+      "query": "乔杉杉 米粉",
+      "searched": false
+    },
+    {
+      "name": "云阿蛮",
+      "id": "BR034",
+      "circle": "区域竞品",
+      "query": "云阿蛮 米粉",
+      "searched": false
+    },
+    {
+      "name": "大鼓米线",
+      "id": "BR035",
+      "circle": "区域竞品",
+      "query": "大鼓米线",
+      "searched": false
+    },
+    {
+      "name": "过桥缘",
+      "id": "BR036",
+      "circle": "区域竞品",
+      "query": "过桥缘 米粉",
+      "searched": false
+    },
+    {
+      "name": "十秒到",
+      "id": "BR037",
+      "circle": "区域竞品",
+      "query": "十秒到 米粉",
+      "searched": false
+    },
+    {
+      "name": "老妈米线",
+      "id": "BR038",
+      "circle": "区域竞品",
+      "query": "老妈米线",
+      "searched": false
+    },
+    {
+      "name": "建新园",
+      "id": "BR039",
+      "circle": "区域竞品",
+      "query": "建新园 米粉",
+      "searched": false
+    },
+    {
+      "name": "曾三仙",
+      "id": "BR040",
+      "circle": "区域竞品",
+      "query": "曾三仙 米粉",
+      "searched": false
+    },
+    {
+      "name": "刘福记桂林米粉",
+      "id": "BR044",
+      "circle": "区域竞品",
+      "query": "刘福记桂林米粉",
+      "searched": false
+    },
+    {
+      "name": "马姐强记桂林米粉",
+      "id": "BR047",
+      "circle": "区域竞品",
+      "query": "马姐强记桂林米粉",
+      "searched": false
+    },
+    {
+      "name": "霸蛮米粉",
+      "id": "BR048",
+      "circle": "区域竞品",
+      "query": "霸蛮米粉",
+      "searched": false
+    },
+    {
+      "name": "花溪王记牛肉粉",
+      "id": "BR049",
+      "circle": "区域竞品",
+      "query": "花溪王记牛肉粉",
+      "searched": false
+    },
+    {
+      "name": "一酸一辣牛肉炖粉",
+      "id": "BR050",
+      "circle": "区域竞品",
+      "query": "一酸一辣牛肉炖粉",
+      "searched": false
+    },
+    {
+      "name": "牛家人大碗牛肉面",
+      "id": "BR052",
+      "circle": "区域竞品",
+      "query": "牛家人大碗牛肉面",
+      "searched": false
+    },
+    {
+      "name": "小满手工粉",
+      "id": "BR053",
+      "circle": "区域竞品",
+      "query": "小满手工粉",
+      "searched": false
+    },
+    {
+      "name": "老碗会",
+      "id": "BR054",
+      "circle": "区域竞品",
+      "query": "老碗会 粉面",
+      "searched": false
+    },
+    {
+      "name": "哥二广西米粉",
+      "id": "BR056",
+      "circle": "区域竞品",
+      "query": "哥二广西米粉",
+      "searched": false
+    },
+    {
+      "name": "三品王牛肉面",
+      "id": "BR069",
+      "circle": "区域竞品",
+      "query": "三品王牛肉面",
+      "searched": false
+    },
+    {
+      "name": "和府捞面",
+      "id": "BR070",
+      "circle": "区域竞品",
+      "query": "和府捞面",
+      "searched": false
+    },
+    {
+      "name": "陈香贵",
+      "id": "BR071",
+      "circle": "区域竞品",
+      "query": "陈香贵 粉面",
+      "searched": false
+    },
+    {
+      "name": "马记永",
+      "id": "BR072",
+      "circle": "区域竞品",
+      "query": "马记永 粉面",
+      "searched": false
+    },
+    {
+      "name": "张拉拉",
+      "id": "BR073",
+      "circle": "区域竞品",
+      "query": "张拉拉 粉面",
+      "searched": false
+    },
+    {
+      "name": "遇见小面",
+      "id": "BR074",
+      "circle": "区域竞品",
+      "query": "遇见小面",
+      "searched": false
+    },
+    {
+      "name": "五爷拌面",
+      "id": "BR075",
+      "circle": "区域竞品",
+      "query": "五爷拌面",
+      "searched": false
+    },
+    {
+      "name": "蔡林记",
+      "id": "BR076",
+      "circle": "区域竞品",
+      "query": "蔡林记 粉面",
+      "searched": false
+    },
+    {
+      "name": "李先生",
+      "id": "BR077",
+      "circle": "区域竞品",
+      "query": "李先生 粉面",
+      "searched": false
+    },
+    {
+      "name": "味千拉面",
+      "id": "BR078",
+      "circle": "区域竞品",
+      "query": "味千拉面",
+      "searched": false
+    },
+    {
+      "name": "牵人麻辣粉",
+      "id": "BR091",
+      "circle": "区域竞品",
+      "query": "牵人麻辣粉",
+      "searched": false
+    },
+    {
+      "name": "粉婆婆土豆粉",
+      "id": "BR095",
+      "circle": "区域竞品",
+      "query": "粉婆婆土豆粉",
+      "searched": false
+    },
+    {
+      "name": "面点王",
+      "id": "BR113",
+      "circle": "区域竞品",
+      "query": "面点王 粉面",
+      "searched": false
+    },
+    {
+      "name": "马兰拉面",
+      "id": "BR114",
+      "circle": "区域竞品",
+      "query": "马兰拉面",
+      "searched": false
+    },
+    {
+      "name": "康师傅私房牛肉面",
+      "id": "BR115",
+      "circle": "区域竞品",
+      "query": "康师傅私房牛肉面",
+      "searched": false
+    },
+    {
+      "name": "陈相国面",
+      "id": "BR117",
+      "circle": "区域竞品",
+      "query": "陈相国面",
+      "searched": false
+    },
+    {
+      "name": "伏牛堂/霸蛮",
+      "id": "BR118",
+      "circle": "区域竞品",
+      "query": "伏牛堂/霸蛮",
+      "searched": false
+    },
+    {
+      "name": "成碗热干面",
+      "id": "BR122",
+      "circle": "区域竞品",
+      "query": "成碗热干面",
+      "searched": false
+    },
+    {
+      "name": "南村记粉面",
+      "id": "BR123",
+      "circle": "区域竞品",
+      "query": "南村记粉面",
+      "searched": false
+    },
+    {
+      "name": "爱食汤粉面",
+      "id": "BR124",
+      "circle": "区域竞品",
+      "query": "爱食汤粉面",
+      "searched": false
+    },
+    {
+      "name": "袁记云饺",
+      "id": "BR129",
+      "circle": "区域竞品",
+      "query": "袁记云饺",
+      "searched": false
+    },
+    {
+      "name": "吉祥馄饨",
+      "id": "BR130",
+      "circle": "区域竞品",
+      "query": "吉祥馄饨",
+      "searched": false
+    },
+    {
+      "name": "如意馄饨",
+      "id": "BR131",
+      "circle": "区域竞品",
+      "query": "如意馄饨",
+      "searched": false
+    },
+    {
+      "name": "三米粥铺",
+      "id": "BR132",
+      "circle": "区域竞品",
+      "query": "三米粥铺",
+      "searched": false
+    },
+    {
+      "name": "曼玲粥",
+      "id": "BR133",
+      "circle": "区域竞品",
+      "query": "曼玲粥 快餐",
+      "searched": false
+    },
+    {
+      "name": "老上海馄饨铺",
+      "id": "BR134",
+      "circle": "区域竞品",
+      "query": "老上海馄饨铺",
+      "searched": false
+    },
+    {
+      "name": "五芳斋",
+      "id": "BR135",
+      "circle": "区域竞品",
+      "query": "五芳斋 快餐",
+      "searched": false
+    },
+    {
+      "name": "秦晋味道",
+      "id": "BR148",
+      "circle": "区域竞品",
+      "query": "秦晋味道",
+      "searched": false
+    },
+    {
+      "name": "老城街小面",
+      "id": "BR149",
+      "circle": "区域竞品",
+      "query": "老城街小面",
+      "searched": false
+    },
+    {
+      "name": "巴比馒头",
+      "id": "BR165",
+      "circle": "区域竞品",
+      "query": "巴比馒头",
+      "searched": false
+    },
+    {
+      "name": "红荔村肠粉",
+      "id": "BR191",
+      "circle": "区域竞品",
+      "query": "红荔村肠粉",
+      "searched": false
+    },
+    {
+      "name": "银记肠粉",
+      "id": "BR192",
+      "circle": "区域竞品",
+      "query": "银记肠粉",
+      "searched": false
+    },
+    {
+      "name": "华辉拉肠",
+      "id": "BR193",
+      "circle": "区域竞品",
+      "query": "华辉拉肠",
+      "searched": false
+    },
+    {
+      "name": "阿宽",
+      "id": "BR092",
+      "circle": "场景竞品",
+      "query": "阿宽 粉面",
+      "searched": false
+    },
+    {
+      "name": "食族人",
+      "id": "BR093",
+      "circle": "场景竞品",
+      "query": "食族人 粉面",
+      "searched": false
+    },
+    {
+      "name": "嗨吃家",
+      "id": "BR094",
+      "circle": "场景竞品",
+      "query": "嗨吃家 粉面",
+      "searched": false
+    },
+    {
+      "name": "西贝莜面村",
+      "id": "BR116",
+      "circle": "场景竞品",
+      "query": "西贝莜面村",
+      "searched": false
+    },
+    {
+      "name": "九毛九",
+      "id": "BR166",
+      "circle": "场景竞品",
+      "query": "九毛九 中式餐饮",
+      "searched": false
+    },
+    {
+      "name": "好欢螺",
+      "id": "BR179",
+      "circle": "场景竞品",
+      "query": "好欢螺 米粉",
+      "searched": false
+    },
+    {
+      "name": "螺霸王",
+      "id": "BR180",
+      "circle": "场景竞品",
+      "query": "螺霸王 米粉",
+      "searched": false
+    },
+    {
+      "name": "李子柒",
+      "id": "BR181",
+      "circle": "场景竞品",
+      "query": "李子柒 米粉",
+      "searched": false
+    },
+    {
+      "name": "大米先生",
+      "id": "BR011",
+      "circle": "替代竞品",
+      "query": "大米先生",
+      "searched": false
+    },
+    {
+      "name": "农耕记",
+      "id": "BR055",
+      "circle": "替代竞品",
+      "query": "农耕记 快餐",
+      "searched": false
+    },
+    {
+      "name": "桂小厨",
+      "id": "BR057",
+      "circle": "替代竞品",
+      "query": "桂小厨 中式餐饮",
+      "searched": false
+    },
+    {
+      "name": "好友缘酒家",
+      "id": "BR058",
+      "circle": "替代竞品",
+      "query": "好友缘酒家",
+      "searched": false
+    },
+    {
+      "name": "南宁肥仔",
+      "id": "BR059",
+      "circle": "替代竞品",
+      "query": "南宁肥仔",
+      "searched": false
+    },
+    {
+      "name": "瑶王府",
+      "id": "BR060",
+      "circle": "替代竞品",
+      "query": "瑶王府 中式餐饮",
+      "searched": false
+    },
+    {
+      "name": "甘家界柠檬鸭",
+      "id": "BR061",
+      "circle": "替代竞品",
+      "query": "甘家界柠檬鸭",
+      "searched": false
+    },
+    {
+      "name": "蛙小侠",
+      "id": "BR062",
+      "circle": "替代竞品",
+      "query": "蛙小侠 中式餐饮",
+      "searched": false
+    },
+    {
+      "name": "南宁饭店",
+      "id": "BR063",
+      "circle": "替代竞品",
+      "query": "南宁饭店",
+      "searched": false
+    },
+    {
+      "name": "真功夫",
+      "id": "BR064",
+      "circle": "替代竞品",
+      "query": "真功夫 快餐",
+      "searched": false
+    },
+    {
+      "name": "乡村基",
+      "id": "BR065",
+      "circle": "替代竞品",
+      "query": "乡村基 快餐",
+      "searched": false
+    },
+    {
+      "name": "72街",
+      "id": "BR066",
+      "circle": "替代竞品",
+      "query": "72街 快餐",
+      "searched": false
+    },
+    {
+      "name": "大家乐",
+      "id": "BR067",
+      "circle": "替代竞品",
+      "query": "大家乐 快餐",
+      "searched": false
+    },
+    {
+      "name": "吉野家",
+      "id": "BR068",
+      "circle": "替代竞品",
+      "query": "吉野家 快餐",
+      "searched": false
+    },
+    {
+      "name": "程大碗快餐",
+      "id": "BR096",
+      "circle": "替代竞品",
+      "query": "程大碗快餐",
+      "searched": false
+    },
+    {
+      "name": "丽华快餐",
+      "id": "BR097",
+      "circle": "替代竞品",
+      "query": "丽华快餐",
+      "searched": false
+    },
+    {
+      "name": "赛百味",
+      "id": "BR098",
+      "circle": "替代竞品",
+      "query": "赛百味 快餐",
+      "searched": false
+    },
+    {
+      "name": "必胜客",
+      "id": "BR099",
+      "circle": "替代竞品",
+      "query": "必胜客 快餐",
+      "searched": false
+    },
+    {
+      "name": "华莱士",
+      "id": "BR100",
+      "circle": "替代竞品",
+      "query": "华莱士 快餐",
+      "searched": false
+    },
+    {
+      "name": "塔斯汀",
+      "id": "BR101",
+      "circle": "替代竞品",
+      "query": "塔斯汀 快餐",
+      "searched": false
+    },
+    {
+      "name": "肯德基",
+      "id": "BR102",
+      "circle": "替代竞品",
+      "query": "肯德基 快餐",
+      "searched": false
+    },
+    {
+      "name": "麦当劳",
+      "id": "BR103",
+      "circle": "替代竞品",
+      "query": "麦当劳 快餐",
+      "searched": false
+    },
+    {
+      "name": "张亮麻辣烫",
+      "id": "BR104",
+      "circle": "替代竞品",
+      "query": "张亮麻辣烫",
+      "searched": false
+    },
+    {
+      "name": "杨国福麻辣烫",
+      "id": "BR105",
+      "circle": "替代竞品",
+      "query": "杨国福麻辣烫",
+      "searched": false
+    },
+    {
+      "name": "沙县小吃",
+      "id": "BR106",
+      "circle": "替代竞品",
+      "query": "沙县小吃",
+      "searched": false
+    },
+    {
+      "name": "猪角闽南猪脚饭",
+      "id": "BR107",
+      "circle": "替代竞品",
+      "query": "猪角闽南猪脚饭",
+      "searched": false
+    },
+    {
+      "name": "米村拌饭",
+      "id": "BR108",
+      "circle": "替代竞品",
+      "query": "米村拌饭",
+      "searched": false
+    },
+    {
+      "name": "鱼你在一起",
+      "id": "BR109",
+      "circle": "替代竞品",
+      "query": "鱼你在一起",
+      "searched": false
+    },
+    {
+      "name": "霸碗盖码饭",
+      "id": "BR110",
+      "circle": "替代竞品",
+      "query": "霸碗盖码饭",
+      "searched": false
+    },
+    {
+      "name": "朴大叔拌饭",
+      "id": "BR111",
+      "circle": "替代竞品",
+      "query": "朴大叔拌饭",
+      "searched": false
+    },
+    {
+      "name": "杨铭宇黄焖鸡米饭",
+      "id": "BR112",
+      "circle": "替代竞品",
+      "query": "杨铭宇黄焖鸡米饭",
+      "searched": false
+    },
+    {
+      "name": "猪霸王",
+      "id": "BR120",
+      "circle": "替代竞品",
+      "query": "猪霸王 快餐",
+      "searched": false
+    },
+    {
+      "name": "周黑鸭",
+      "id": "BR136",
+      "circle": "替代竞品",
+      "query": "周黑鸭 卤味",
+      "searched": false
+    },
+    {
+      "name": "绝味鸭脖",
+      "id": "BR137",
+      "circle": "替代竞品",
+      "query": "绝味鸭脖",
+      "searched": false
+    },
+    {
+      "name": "煌上煌",
+      "id": "BR138",
+      "circle": "替代竞品",
+      "query": "煌上煌 卤味",
+      "searched": false
+    },
+    {
+      "name": "紫燕百味鸡",
+      "id": "BR139",
+      "circle": "替代竞品",
+      "query": "紫燕百味鸡",
+      "searched": false
+    },
+    {
+      "name": "正新鸡排",
+      "id": "BR140",
+      "circle": "替代竞品",
+      "query": "正新鸡排",
+      "searched": false
+    },
+    {
+      "name": "蜜雪冰城",
+      "id": "BR141",
+      "circle": "替代竞品",
+      "query": "蜜雪冰城",
+      "searched": false
+    },
+    {
+      "name": "古茗",
+      "id": "BR142",
+      "circle": "替代竞品",
+      "query": "古茗 茶饮",
+      "searched": false
+    },
+    {
+      "name": "茶百道",
+      "id": "BR143",
+      "circle": "替代竞品",
+      "query": "茶百道 茶饮",
+      "searched": false
+    },
+    {
+      "name": "喜茶",
+      "id": "BR144",
+      "circle": "替代竞品",
+      "query": "喜茶 茶饮",
+      "searched": false
+    },
+    {
+      "name": "霸王茶姬",
+      "id": "BR145",
+      "circle": "替代竞品",
+      "query": "霸王茶姬",
+      "searched": false
+    },
+    {
+      "name": "瑞幸咖啡",
+      "id": "BR146",
+      "circle": "替代竞品",
+      "query": "瑞幸咖啡",
+      "searched": false
+    },
+    {
+      "name": "库迪咖啡",
+      "id": "BR147",
+      "circle": "替代竞品",
+      "query": "库迪咖啡",
+      "searched": false
+    },
+    {
+      "name": "小龙坎",
+      "id": "BR150",
+      "circle": "替代竞品",
+      "query": "小龙坎 火锅",
+      "searched": false
+    },
+    {
+      "name": "海底捞",
+      "id": "BR151",
+      "circle": "替代竞品",
+      "query": "海底捞 火锅",
+      "searched": false
+    },
+    {
+      "name": "呷哺呷哺",
+      "id": "BR152",
+      "circle": "替代竞品",
+      "query": "呷哺呷哺",
+      "searched": false
+    },
+    {
+      "name": "德克士",
+      "id": "BR153",
+      "circle": "替代竞品",
+      "query": "德克士 快餐",
+      "searched": false
+    },
+    {
+      "name": "汉堡王",
+      "id": "BR154",
+      "circle": "替代竞品",
+      "query": "汉堡王 快餐",
+      "searched": false
+    },
+    {
+      "name": "CoCo都可",
+      "id": "BR155",
+      "circle": "替代竞品",
+      "query": "CoCo都可",
+      "searched": false
+    },
+    {
+      "name": "书亦烧仙草",
+      "id": "BR156",
+      "circle": "替代竞品",
+      "query": "书亦烧仙草",
+      "searched": false
+    },
+    {
+      "name": "益禾堂",
+      "id": "BR157",
+      "circle": "替代竞品",
+      "query": "益禾堂 茶饮",
+      "searched": false
+    },
+    {
+      "name": "沪上阿姨",
+      "id": "BR158",
+      "circle": "替代竞品",
+      "query": "沪上阿姨",
+      "searched": false
+    },
+    {
+      "name": "甜啦啦",
+      "id": "BR159",
+      "circle": "替代竞品",
+      "query": "甜啦啦 茶饮",
+      "searched": false
+    },
+    {
+      "name": "星巴克",
+      "id": "BR160",
+      "circle": "替代竞品",
+      "query": "星巴克 咖啡",
+      "searched": false
+    },
+    {
+      "name": "老乡鸡",
+      "id": "BR161",
+      "circle": "替代竞品",
+      "query": "老乡鸡 快餐",
+      "searched": false
+    },
+    {
+      "name": "老娘舅",
+      "id": "BR162",
+      "circle": "替代竞品",
+      "query": "老娘舅 快餐",
+      "searched": false
+    },
+    {
+      "name": "永和大王",
+      "id": "BR163",
+      "circle": "替代竞品",
+      "query": "永和大王",
+      "searched": false
+    },
+    {
+      "name": "永和豆浆",
+      "id": "BR164",
+      "circle": "替代竞品",
+      "query": "永和豆浆",
+      "searched": false
+    },
+    {
+      "name": "太二酸菜鱼",
+      "id": "BR167",
+      "circle": "替代竞品",
+      "query": "太二酸菜鱼",
+      "searched": false
+    },
+    {
+      "name": "喜家德虾仁水饺",
+      "id": "BR168",
+      "circle": "替代竞品",
+      "query": "喜家德虾仁水饺",
+      "searched": false
+    },
+    {
+      "name": "夸父炸串",
+      "id": "BR169",
+      "circle": "替代竞品",
+      "query": "夸父炸串",
+      "searched": false
+    },
+    {
+      "name": "喜姐炸串",
+      "id": "BR170",
+      "circle": "替代竞品",
+      "query": "喜姐炸串",
+      "searched": false
+    },
+    {
+      "name": "黑色经典臭豆腐",
+      "id": "BR171",
+      "circle": "替代竞品",
+      "query": "黑色经典臭豆腐",
+      "searched": false
+    },
+    {
+      "name": "锅大鲜",
+      "id": "BR183",
+      "circle": "替代竞品",
+      "query": "锅大鲜 快餐",
+      "searched": false
+    },
+    {
+      "name": "煲仔皇",
+      "id": "BR184",
+      "circle": "替代竞品",
+      "query": "煲仔皇 快餐",
+      "searched": false
+    },
+    {
+      "name": "和合谷",
+      "id": "BR185",
+      "circle": "替代竞品",
+      "query": "和合谷 快餐",
+      "searched": false
+    },
+    {
+      "name": "南城香",
+      "id": "BR186",
+      "circle": "替代竞品",
+      "query": "南城香 快餐",
+      "searched": false
+    },
+    {
+      "name": "超意兴",
+      "id": "BR187",
+      "circle": "替代竞品",
+      "query": "超意兴 快餐",
+      "searched": false
+    },
+    {
+      "name": "大米小龙",
+      "id": "BR188",
+      "circle": "替代竞品",
+      "query": "大米小龙",
+      "searched": false
+    },
+    {
+      "name": "家乐缘",
+      "id": "BR189",
+      "circle": "替代竞品",
+      "query": "家乐缘 快餐",
+      "searched": false
+    },
+    {
+      "name": "嘉旺",
+      "id": "BR190",
+      "circle": "替代竞品",
+      "query": "嘉旺 快餐",
+      "searched": false
+    },
+    {
+      "name": "汤上功夫",
+      "id": "BR194",
+      "circle": "替代竞品",
+      "query": "汤上功夫",
+      "searched": false
+    },
+    {
+      "name": "都城快餐",
+      "id": "BR195",
+      "circle": "替代竞品",
+      "query": "都城快餐",
+      "searched": false
+    },
+    {
+      "name": "阿婆牛杂",
+      "id": "BR196",
+      "circle": "替代竞品",
+      "query": "阿婆牛杂",
+      "searched": false
+    },
+    {
+      "name": "粒上皇",
+      "id": "BR197",
+      "circle": "替代竞品",
+      "query": "粒上皇 小吃",
+      "searched": false
+    },
+    {
+      "name": "赵记传承",
+      "id": "BR198",
+      "circle": "替代竞品",
+      "query": "赵记传承",
+      "searched": false
+    },
+    {
+      "name": "满记甜品",
+      "id": "BR199",
+      "circle": "替代竞品",
+      "query": "满记甜品",
+      "searched": false
+    },
+    {
+      "name": "许留山",
+      "id": "BR200",
+      "circle": "替代竞品",
+      "query": "许留山 甜品",
+      "searched": false
+    },
+    {
+      "name": "鲜芋仙",
+      "id": "BR201",
+      "circle": "替代竞品",
+      "query": "鲜芋仙 甜品",
+      "searched": false
+    }
+  ],
+  "instruction": "对每个品牌的 query 使用 WebSearch 执行搜索。每个 query 搜 3-5 条相关新闻。⚠️ 时效要求：只收录近 7 天内发布的新闻，标题中含「2020年」「2021年」「2022年」「2023年」「2024年」或摘要无明显时效标识的旧闻一律丢弃。每条结果需包含: brand_name, brand_id, circle, title, url, summary, published_at(YYYY-MM-DD格式), category。published_at 无法确定具体日期的条目不要收录。将结果写入 data/_search_results.json。"
+}

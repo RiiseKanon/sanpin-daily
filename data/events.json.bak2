@@ -1,0 +1,335 @@
+{
+  "events": [
+    {
+      "brand_name": "三品王",
+      "brand_id": "BR001",
+      "circle": "自身品牌",
+      "category": "渠道/扩张动作",
+      "title": "三品王北海铁山港南康店新店开业，进店消费送卤蛋",
+      "summary": "三品王北海铁山港南康店新店开业，活动6月27日-9月2日进店消费送卤蛋。",
+      "keywords": [
+        "卤蛋",
+        "铁山港",
+        "进店",
+        "南康",
+        "新店"
+      ],
+      "source": "AI搜索代理",
+      "url": "https://weibo.com/u/2625373521",
+      "published_at": "2026-07-13",
+      "hero_image": "https://img2.baidu.com/it/u=2714500187,47581603&fm=253&fmt=auto&app=138&f=JPEG?w=1067&h=800",
+      "base_score": 2,
+      "score": 4,
+      "score_reason": "基础分=+2 × 圈层(自身品牌=2.0) × 时效(3天前/渠道/扩张动作=1.0)",
+      "rating_type": "正向评级",
+      "report_part": "part_1",
+      "metadata": {
+        "query": "三品王",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 55,
+        "content": 52,
+        "composite": 29,
+        "level": "低",
+        "note": "微博，社交平台 UGC 内容",
+        "matched": "weibo.com",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://weibo.com/u/2625373521",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-031",
+      "fingerprint": "f10f18341febbcb0",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "三品王北海铁山港南康店新店开业，进店消费送卤蛋",
+          "source": "AI搜索代理",
+          "delta": null
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "组织/资本/供应链动态",
+      "title": "微念控股柳螺香，深化布局螺蛳粉供应链",
+      "summary": "微念控股餐饮连锁品牌「柳螺香」：广西柳螺香食品科技有限公司完成工商变更，微念由参股股东变更为控股股东，持股70%。",
+      "keywords": [
+        "微念",
+        "柳螺香",
+        "深化",
+        "食品科技",
+        "变更"
+      ],
+      "source": "AI搜索代理",
+      "url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+      "published_at": "2026-07-10",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 2,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(6天前/组织/资本/供应链动态=1.0) → 钳位至 +2",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-15-032",
+      "fingerprint": "a0c9dae87ce88d40",
+      "status": "NEW",
+      "first_seen": "2026-07-15",
+      "last_seen": "2026-07-15",
+      "snapshots": [
+        {
+          "date": "2026-07-15",
+          "type": "NEW",
+          "title": "微念控股柳螺香，深化布局螺蛳粉供应链",
+          "source": "AI搜索代理",
+          "delta": null
+        }
+      ],
+      "related_urls": [
+        {
+          "url": "https://www.bjnews.com.cn/detail/1694762614169193.html",
+          "source": "新京报",
+          "title": "微念控股柳螺香，深化布局螺蛳粉供应链"
+        },
+        {
+          "url": "https://yule.sohu.com/a/722108679_120773210",
+          "source": "搜狐娱乐",
+          "title": "美腕回应李佳琦抖音认证消失丨蓝鲨消费早报9月20日"
+        }
+      ]
+    },
+    {
+      "brand_name": "柳螺香",
+      "brand_id": "BR004",
+      "circle": "核心竞品",
+      "category": "数据/业绩披露",
+      "title": "2026中国螺蛳粉加盟品牌排行榜：柳螺香入选头部品牌TOP5",
+      "summary": "2026年螺蛳粉加盟市场格局分析，柳螺香等品牌入选TOP5榜单，展现品牌加盟价值和市场竞争力。",
+      "keywords": [
+        "加盟",
+        "品牌",
+        "2026",
+        "柳螺香",
+        "TOP5"
+      ],
+      "source": "AI搜索代理",
+      "url": "https://www.chasyi.com/article_detail/3175448",
+      "published_at": "2026-07-09",
+      "hero_image": "https://img0.baidu.com/it/u=4276962567,422029314&fm=253&fmt=auto?w=1066&h=800",
+      "base_score": 1,
+      "score": 1,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(7天前/数据/业绩披露=0.5) → 钳位至 +1",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "柳螺香",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "https://www.chasyi.com/article_detail/3175448",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-16-001",
+      "fingerprint": "e369ac11d8f7d758",
+      "status": "ACTIVE",
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "snapshots": [
+        {
+          "date": "2026-07-16",
+          "type": "NEW",
+          "title": "2026中国螺蛳粉加盟品牌排行榜：柳螺香入选头部品牌TOP5",
+          "source": "AI搜索代理",
+          "delta": null
+        },
+        {
+          "date": "2026-07-16",
+          "type": "UPDATE",
+          "title": "2026中国螺蛳粉加盟品牌排行榜：柳螺香入选头部品牌TOP5",
+          "source": "AI搜索代理",
+          "delta": ""
+        }
+      ],
+      "updated_at": "2026-07-16T15:47:52.568469"
+    },
+    {
+      "brand_name": "王味螺",
+      "brand_id": "BR006",
+      "circle": "核心竞品",
+      "category": "渠道/扩张动作",
+      "title": "王味螺扶绥城职店新店开业，宠粉福利嗦粉卤味免费吃",
+      "summary": "王味螺骨汤螺蛳粉扶绥城职店新店开业，推出宠粉福利活动，嗦粉卤味免费吃。品牌持续在广西区域扩张门店。",
+      "keywords": [
+        "卤味",
+        "王味",
+        "扶绥",
+        "城职店",
+        "宠粉"
+      ],
+      "source": "AI搜索代理",
+      "url": "http://www.wangweiluo.com/index/index/detail/id/2.html",
+      "published_at": "2026-07-15",
+      "hero_image": "https://img2.baidu.com/it/u=63525175,2472519087&fm=253&fmt=auto&app=138&f=JPEG?w=1062&h=800",
+      "base_score": 3,
+      "score": 4,
+      "score_reason": "基础分=+3 × 圈层(核心竞品=1.5) × 时效(1天前/渠道/扩张动作=1.0) → 钳位至 +4",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "王味螺",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 50,
+        "content": 50,
+        "composite": 25,
+        "level": "低",
+        "note": "来源未知，建议交叉核实",
+        "matched": "未知",
+        "signals": []
+      },
+      "verifiable": true,
+      "citation_url": "http://www.wangweiluo.com/index/index/detail/id/2.html",
+      "citation_tier": "lead",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-16-002",
+      "fingerprint": "512bc9f7510f6d2c",
+      "status": "ACTIVE",
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "snapshots": [
+        {
+          "date": "2026-07-16",
+          "type": "NEW",
+          "title": "王味螺扶绥城职店新店开业，宠粉福利嗦粉卤味免费吃",
+          "source": "AI搜索代理",
+          "delta": null
+        },
+        {
+          "date": "2026-07-16",
+          "type": "UPDATE",
+          "title": "王味螺扶绥城职店新店开业，宠粉福利嗦粉卤味免费吃",
+          "source": "AI搜索代理",
+          "delta": ""
+        }
+      ],
+      "updated_at": "2026-07-16T15:47:52.569450"
+    },
+    {
+      "brand_name": "螺公堂",
+      "brand_id": "BR005",
+      "circle": "核心竞品",
+      "category": "数据/业绩披露",
+      "title": "广西螺公堂餐饮投资有限公司2026年企业年报公示",
+      "summary": "螺公堂2026年企业年报信息公示，涵盖基本信息、资产状况、对外投资等，品牌持续稳健运营。",
+      "keywords": [
+        "2026",
+        "公堂",
+        "公示",
+        "年报",
+        "信息"
+      ],
+      "source": "AI搜索代理",
+      "url": "https://aiqicha.baidu.com/company_annual_21676162822027",
+      "published_at": "2026-07-10",
+      "hero_image": "https://img1.baidu.com/it/u=3645718428,3876225989&fm=253&fmt=auto&app=120&f=JPEG?w=1067&h=800",
+      "base_score": 1,
+      "score": 1,
+      "score_reason": "基础分=+1 × 圈层(核心竞品=1.5) × 时效(6天前/数据/业绩披露=0.5) → 钳位至 +1",
+      "rating_type": "威胁评级",
+      "report_part": "part_2",
+      "metadata": {
+        "query": "螺公堂",
+        "source_type": "ai_websearch"
+      },
+      "source_credibility": {
+        "authority": 78,
+        "content": 86,
+        "composite": 67,
+        "level": "中",
+        "note": "爱企查/企查查，工商数据平台（数据来自官方工商登记）；正文信号微调：独立背书/权威引用(+6)（内容分 80→86）",
+        "matched": "aiqicha.baidu.com",
+        "signals": [
+          {
+            "signal": "independent_endorsed",
+            "label": "独立背书/权威引用",
+            "adjust": 6,
+            "matched": [
+              "年报"
+            ]
+          }
+        ]
+      },
+      "verifiable": true,
+      "citation_url": "https://aiqicha.baidu.com/company_annual_21676162822027",
+      "citation_tier": "citable",
+      "link_gated": false,
+      "gate_note": "",
+      "event_id": "EVT-2026-07-16-003",
+      "fingerprint": "b9095559c2bf545a",
+      "status": "ACTIVE",
+      "first_seen": "2026-07-16",
+      "last_seen": "2026-07-16",
+      "snapshots": [
+        {
+          "date": "2026-07-16",
+          "type": "NEW",
+          "title": "广西螺公堂餐饮投资有限公司2026年企业年报公示",
+          "source": "AI搜索代理",
+          "delta": null
+        },
+        {
+          "date": "2026-07-16",
+          "type": "UPDATE",
+          "title": "广西螺公堂餐饮投资有限公司2026年企业年报公示",
+          "source": "AI搜索代理",
+          "delta": ""
+        }
+      ],
+      "updated_at": "2026-07-16T15:47:52.570250"
+    }
+  ],
+  "_meta": {
+    "total": 5,
+    "last_updated": "2026-07-16T15:47:52.573006",
+    "cleaned_at": "2026-07-16",
+    "cleaned_count": 29
+  }
+}

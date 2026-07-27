@@ -3,7 +3,7 @@
     "description": "三品王每日品牌动态日报 v5.4 - 200+品牌库 + 五部分日报 + 纯品牌名搜索",
     "version": "5.5",
     "created": "2026-07-08",
-    "last_updated": "2026-07-09",
+    "last_updated": "2026-07-23",
     "changelog": "v5.5: 固化品牌图片抓取框架规范（BRAND_IMAGE_SPEC）与卡片样式框架规范（REPORT_CARD_STYLE_SPEC）；图片抓取策略：品牌名+门头/招牌优先，横向图优先，禁广场招牌；卡片头部固定120px、品牌图top对齐、行业图center、blur1.5px+30%蒙版、品牌名/标题单行截断",
     "brand_count": 201,
     "circle_distribution": {
@@ -28,7 +28,8 @@
     },
     "hero_image_updated": "2026-07-09-v3",
     "hero_image_strategy": "遵循 config.BRAND_IMAGE_SPEC：搜索词[门头招牌,店面外观,餐厅门面]→多候选(45张)→去重→评分(横向图1.2~2.0优先)→取最高分；质量门槛：禁第三方广场招牌盖过品牌标识、禁无品牌标识玻璃幕墙",
-    "card_style_spec": "遵循 config.REPORT_CARD_STYLE_SPEC：容器固定430px(PC/移动一致)、头部固定120px、品牌图top/行业图center对齐、blur(1.5px)+rgba(0,0,0,0.3)蒙版、品牌名与标题单行截断"
+    "card_style_spec": "遵循 config.REPORT_CARD_STYLE_SPEC：容器固定430px(PC/移动一致)、头部固定120px、品牌图top/行业图center对齐、blur(1.5px)+rgba(0,0,0,0.3)蒙版、品牌名与标题单行截断",
+    "total": 198
   },
   "reference_brand": {
     "name": "三品王",
@@ -3555,111 +3556,6 @@
       "hero_image": "https://img2.baidu.com/it/u=1413481058,4127415817&fm=253&fmt=auto&app=138&f=JPEG?w=1253&h=800"
     },
     {
-      "id": "BR092",
-      "name": "阿宽",
-      "circle": "场景竞品",
-      "entry_check": {
-        "is_noodle_rice_category": true,
-        "is_dual_channel_fastfood": false,
-        "region_overlap_rate": "N/A"
-      },
-      "level": null,
-      "level_reason": "预包装为主，非双渠道快餐 → 归入场景竞品",
-      "overlap_dimensions": [],
-      "overlap_count": 0,
-      "category": "粉面（方便粉面）",
-      "sub_category": "红油面皮/酸辣粉",
-      "price_zone": "5-10元",
-      "regions": "全国",
-      "scene": "其他",
-      "store_count": "0(预包装为主)",
-      "founded": "2016年",
-      "headquarters": "成都",
-      "official_channels": [],
-      "notes": "预包装粉面头部品牌",
-      "verified_at": "2026-07-08",
-      "confidence": "低",
-      "verification_sources": [
-        "公开资料"
-      ],
-      "checks_passed": [
-        "单源验证"
-      ],
-      "needs_review": true,
-      "is_self": false,
-      "hero_image": "https://img1.baidu.com/it/u=4098195190,450977065&fm=253&fmt=auto&app=120&f=JPEG?w=1196&h=800"
-    },
-    {
-      "id": "BR093",
-      "name": "食族人",
-      "circle": "场景竞品",
-      "entry_check": {
-        "is_noodle_rice_category": true,
-        "is_dual_channel_fastfood": false,
-        "region_overlap_rate": "N/A"
-      },
-      "level": null,
-      "level_reason": "预包装为主，非双渠道快餐 → 归入场景竞品",
-      "overlap_dimensions": [],
-      "overlap_count": 0,
-      "category": "粉面（方便粉面）",
-      "sub_category": "酸辣粉/方便粉面",
-      "price_zone": "5-10元",
-      "regions": "全国",
-      "scene": "其他",
-      "store_count": "0(预包装为主)",
-      "founded": "2018年",
-      "headquarters": "郑州",
-      "official_channels": [],
-      "notes": "预包装酸辣粉头部品牌",
-      "verified_at": "2026-07-08",
-      "confidence": "低",
-      "verification_sources": [
-        "公开资料"
-      ],
-      "checks_passed": [
-        "单源验证"
-      ],
-      "needs_review": true,
-      "is_self": false,
-      "hero_image": "https://img2.baidu.com/it/u=2164927913,4051676277&fm=253&fmt=auto&app=138&f=JPEG?w=1479&h=800"
-    },
-    {
-      "id": "BR094",
-      "name": "嗨吃家",
-      "circle": "场景竞品",
-      "entry_check": {
-        "is_noodle_rice_category": true,
-        "is_dual_channel_fastfood": false,
-        "region_overlap_rate": "N/A"
-      },
-      "level": null,
-      "level_reason": "预包装为主，非双渠道快餐 → 归入场景竞品",
-      "overlap_dimensions": [],
-      "overlap_count": 0,
-      "category": "粉面（方便粉面）",
-      "sub_category": "酸辣粉",
-      "price_zone": "5-8元",
-      "regions": "全国",
-      "scene": "其他",
-      "store_count": "0(预包装为主)",
-      "founded": "2017年",
-      "headquarters": "郑州",
-      "official_channels": [],
-      "notes": "预包装酸辣粉品牌",
-      "verified_at": "2026-07-08",
-      "confidence": "低",
-      "verification_sources": [
-        "公开资料"
-      ],
-      "checks_passed": [
-        "单源验证"
-      ],
-      "needs_review": true,
-      "is_self": false,
-      "hero_image": "https://img0.baidu.com/it/u=910682154,979462605&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"
-    },
-    {
       "id": "BR095",
       "name": "粉婆婆土豆粉",
       "circle": "区域竞品",
@@ -6812,28 +6708,28 @@
     {
       "id": "BR181",
       "name": "李子柒",
-      "circle": "场景竞品",
+      "circle": "替代竞品",
       "entry_check": {
         "is_noodle_rice_category": true,
         "is_dual_channel_fastfood": false,
         "region_overlap_rate": "N/A"
       },
-      "level": null,
+      "level": 1,
       "level_reason": "预包装为主，非双渠道快餐 → 归入场景竞品",
       "overlap_dimensions": [],
       "overlap_count": 0,
       "category": "米粉（螺蛳粉/预包装）",
       "sub_category": "螺蛳粉/预包装",
-      "price_zone": "10-15元",
+      "price_zone": "7-15元（预包装）",
       "regions": "全国",
       "scene": "其他",
-      "store_count": "0(预包装为主)",
+      "store_count": "无门店（电商）",
       "founded": "2016年",
       "headquarters": "绵阳",
       "official_channels": [],
       "notes": "IP+预包装螺蛳粉",
       "verified_at": "2026-07-08",
-      "confidence": "低",
+      "confidence": "中",
       "verification_sources": [
         "公开资料"
       ],

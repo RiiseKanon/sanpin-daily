@@ -51,6 +51,14 @@ class ProcessingPipeline:
         if stale_count > 0:
             logger.info(f"时效过滤: 丢弃 {stale_count} 条过期内容")
 
+        # Step 1.5: 内容相关性过滤（V2.4.1）
+        # 兜底防线：标题/摘要不含任何餐饮信号词的事件视为噪音，直接丢弃
+        # 典型场景：品牌名与常见词重叠（如"秋菊"→花的新闻、"喜茶"→非茶饮内容）
+        if candidate_events:
+            candidate_events, noise_count = _filter_irrelevant(candidate_events)
+            if noise_count > 0:
+                logger.info(f"相关性过滤: 丢弃 {noise_count} 条不相关内容")
+
         if not candidate_events:
             logger.info("无新候选事件，直接聚合存量可见事件")
 
@@ -83,11 +91,28 @@ class ProcessingPipeline:
                 if escalate:
                     new_status = escalate
 
-                self.store.update(matched["event_id"], {
+                # 构建 update 字典
+                update_dict = {
                     "status": new_status,
                     "last_seen": today,
                     "score": max(old_score, new_score) if new_status != "ESCALATED" else new_score,
-                })
+                }
+
+                # V2.4.3: 同步 report_part，防止旧事件保留错误的路由归属
+                # 场景：行业趋势/政策事件在 _raw_item_to_event 中已被正确设为 part_3，
+                # 但旧事件可能保留了 part_2（来自早期版本的错误路由）。
+                # 匹配更新时，以新候选的 report_part 为准覆盖旧值。
+                candidate_part = candidate.get("report_part", "")
+                if candidate_part and candidate_part != matched.get("report_part", ""):
+                    logger.info(
+                        f"report_part 修正: {matched['event_id']} "
+                        f"\"{matched.get('report_part', '')}\" → \"{candidate_part}\""
+                    )
+                    update_dict["report_part"] = candidate_part
+
+                self.store.update(matched["event_id"], update_dict)
+                # 同步内存中的 matched 对象，确保后续聚合使用最新值
+                matched["report_part"] = candidate_part
 
                 updated_events.append(matched)
                 logger.debug(f"事件追踪: {matched['event_id']} → {new_status}")
@@ -145,6 +170,14 @@ class ProcessingPipeline:
         all_visible = [e for e in self.store.all()
                        if self.state_machine.is_visible_in_daily(e.get("status", ""))
                        and e.get("last_seen", "") >= self._window_start(today)]
+
+        # V2.4.3: report_part 兜底修正 — 确保行业趋势/政策事件不会出现在竞品板块
+        # 早期版本可能将行业趋势事件错误路由到 part_2，此处做最终校验
+        for e in all_visible:
+            if e.get("category") == "行业趋势/政策" and e.get("report_part") != "part_3":
+                logger.info(f"report_part 兜底修正: {e['event_id']} "
+                            f"\"{e.get('report_part', '')}\" → \"part_3\"")
+                e["report_part"] = "part_3"
 
         # 重新评分所有可见事件
         for e in all_visible:
@@ -265,12 +298,18 @@ class ProcessingPipeline:
 
     def _is_stale(self, event: dict, today: str) -> bool:
         """
-        时效校验（流水线级别的兜底防线）
-        确保不管数据来源如何，超过时间窗口的内容都会被过滤
+        时效校验（流水线级别的兜底防线）— V2.4.2 强化
+
+        确保不管数据来源如何，超过时间窗口的内容都会被过滤。
+        对无法核实发布日期的内容不再放行。
         """
         published = event.get("published_at", "")
+        title = event.get("title", "")
+
+        # V2.4.2: 无日期 → 视为不可靠内容，直接丢弃（不再放行）
         if not published:
-            return False  # 无日期不过滤
+            logger.debug(f"时效过滤(无日期): {title[:40]}...")
+            return True
 
         # 检查是否超过时间窗口
         try:
@@ -278,14 +317,20 @@ class ProcessingPipeline:
             target_date = date.fromisoformat(today)
             days_diff = (target_date - pub_date).days
         except (ValueError, TypeError):
-            return False
+            # V2.4.2: 日期格式异常 → 视为不可靠
+            logger.debug(f"时效过滤(日期格式异常): {published}")
+            return True
 
         if days_diff > config.TIME_WINDOW_DAYS:
-            logger.debug(f"时效过滤: [{published}] {event.get('title','')[:40]}... ({days_diff}天前)")
+            logger.debug(f"时效过滤: [{published}] {title[:40]}... ({days_diff}天前)")
+            return True
+
+        # V2.4.2: 未来日期 → 异常数据
+        if days_diff < 0:
+            logger.debug(f"时效过滤(未来日期): [{published}] {title[:40]}...")
             return True
 
         # 检查标题是否含过期关键词
-        title = event.get("title", "")
         for kw in config.STALE_KEYWORDS:
             if kw in title:
                 logger.debug(f"时效过滤(关键词): [{kw}] {title[:40]}...")
@@ -314,3 +359,104 @@ class ProcessingPipeline:
     def _empty_report(self, today: str) -> dict:
         """生成空日报"""
         return self.aggregator.aggregate([], [], today)
+
+
+# ============================================================================
+# 内容相关性过滤器（V2.4.1）
+# ============================================================================
+
+# 餐饮行业核心信号词 — 标题/摘要至少命中一个才视为相关内容
+_FOOD_SIGNAL_WORDS = [
+    # 品类词
+    "米粉", "米线", "螺蛳粉", "酸辣粉", "面皮", "面条", "拌面", "汤面",
+    "牛肉粉", "羊肉粉", "桂林米粉", "老友粉", "卤菜粉", "砂锅粉", "干捞粉",
+    "快餐", "小吃", "餐饮", "餐厅", "饭店", "食堂", "外卖", "团购",
+    "茶饮", "奶茶", "咖啡", "烘焙", "面包", "甜点",
+    # 品牌动作词
+    "新店", "开业", "加盟", "扩张", "连锁", "门店", "店面",
+    "新品", "上市", "菜单", "口味", "食材", "供应链", "中央厨房",
+    "融资", "上市", "营收", "业绩", "利润", "财报",
+    "促销", "活动", "优惠", "折扣", "会员",
+    # 食安监管词
+    "食品", "卫生", "安全", "抽检", "超标", "投诉", "监管", "市场监督",
+    "美团", "饿了么", "大众点评", "抖音团购", "百度外卖",
+    # 行业词
+    "螺蛳", "酸笋", "酸豆角", "卤蛋", "卤味", "叉烧", "牛肉", "锅烧",
+    "嗦粉", "吃粉", "粉店", "粉面", "面馆",
+    # 品牌/企业标识词
+    "品牌", "公司", "企业", "创始人", "CEO", "总裁",
+    # 广西地域 + 餐饮
+    "南宁", "柳州", "桂林", "广西", "北海", "玉林", "贵港",
+]
+
+# 明确的非餐饮噪声词 — 命中任意一个且未命中上述信号词 → 丢弃
+_NOISE_PATTERNS = [
+    "电影", "演唱会", "综艺", "电视剧", "娱乐圈", "明星",
+    "菊花", "花卉", "植物", "园林", "公园",
+    "中秋", "重阳", "春节", "清明", "端午", "节令",
+    "高铁", "铁路", "航班", "航线",
+    "篮球", "足球", "运动会", "赛事",
+    "房价", "楼盘", "地产",
+    # V2.4.2 新增：搜索代理漏网噪声
+    "设计之都", "价格违法", "北京市属公园", "文物中的花神",
+    "第二十条", "法学三十年", "米粉大会", "凉拌粉",
+]
+
+
+def _filter_irrelevant(events: list[dict]) -> tuple[list[dict], int]:
+    """
+    过滤与餐饮行业不相关的事件（V2.4.2 增强）。
+
+    规则：
+    1. 标题必须包含品牌名或其核心字（≥2字匹配）→ 否则视为不相关
+    2. 标题/摘要命中任一餐饮信号词 → 保留
+    3. 命中噪声模式且无信号词 → 丢弃
+    4. 既无信号也无噪声 → 保守保留
+    """
+    kept = []
+    noise = 0
+
+    for evt in events:
+        title = evt.get("title", "") or ""
+        summary = evt.get("summary", "") or ""
+        brand = evt.get("brand_name", "") or ""
+        text = f"{title} {summary}"
+
+        # V2.4.2: 标题必须包含品牌名（≥2字匹配）
+        # 排除品牌名过短（≤1字）和品牌名含特殊字符的情况
+        if len(brand) >= 2:
+            # 尝试品牌名的 2-gram 子串匹配
+            brand_in_title = False
+            for i in range(len(brand) - 1):
+                bigram = brand[i:i+2]
+                if bigram in title:
+                    brand_in_title = True
+                    break
+            # 全名匹配（品牌名可能部分出现）
+            if not brand_in_title and brand in title:
+                brand_in_title = True
+
+            if not brand_in_title:
+                logger.debug(f"相关性过滤(标题不含品牌): [{brand}] {title[:50]}...")
+                noise += 1
+                continue
+
+        # 命中任一餐饮信号词 → 保留
+        has_signal = any(w in text for w in _FOOD_SIGNAL_WORDS)
+
+        if has_signal:
+            kept.append(evt)
+            continue
+
+        # 未命中信号词，检查是否命中噪声模式
+        has_noise = any(w in text for w in _NOISE_PATTERNS)
+
+        if has_noise:
+            logger.debug(f"相关性过滤(噪声): [{brand}] {title[:50]}...")
+            noise += 1
+            continue
+
+        # 既无信号也无噪声 → 保守保留（可能是新品类或罕见表述）
+        kept.append(evt)
+
+    return kept, noise

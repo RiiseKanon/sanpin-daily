@@ -120,8 +120,8 @@ def run_daily_job(target_date: str = None, dry_run: bool = False):
         logger.info(f"   最新版: {html_path}")
         logger.info(f"   归档:   {archive_path}")
 
-        # Step 6: 部署公网访问 + 发送钉钉通知
-        _deploy_and_notify(report, target_date)
+        # Step 6: 部署公网访问 + 发送钉钉通知（已禁用自动推送）
+        # _deploy_and_notify(report, target_date)
     else:
         # 试运行：只输出统计
         html = renderer.render(report)
@@ -159,12 +159,18 @@ def _inject_external_searches(target_date: str) -> list:
       "results": [
         {
           "brand_name": "尝不忘", "brand_id": "BR002", "circle": "核心竞品",
-          "title": "...", "url": "...", "summary": "...", "published_at": "...",
+          "title": "...", "url": "...", "summary": "...", "published_at": "2026-07-13",
           "category": "渠道/扩张动作"
         },
         ...
       ]
     }
+
+    V2.4.2 时效过滤：
+    - published_at 为空 → 丢弃（不可靠内容）
+    - published_at 超过 7 天 → 丢弃（过期新闻）
+    - published_at 在未来 → 丢弃（异常数据）
+    - 标题中含旧年份（2020-2024年）→ 丢弃（搜索代理未过滤的漏网之鱼）
     """
     from collector.base import RawItem
     result_file = config.DATA_DIR / "_search_results.json"
@@ -182,14 +188,58 @@ def _inject_external_searches(target_date: str) -> list:
         logger.info(f"搜索结果日期不匹配（{data.get('target_date')} vs {target_date}），跳过")
         return []
 
+    from datetime import date as dt_date, timedelta
+    today = dt_date.fromisoformat(target_date) if target_date else dt_date.today()
+    cutoff = today - timedelta(days=7)
+
     items = []
+    stale_count = 0
+    nodate_count = 0
+    oldyear_count = 0
+
     for r in data.get("results", []):
+        pub_str = r.get("published_at", "")
+
+        # ① 无日期 → 丢弃
+        if not pub_str:
+            nodate_count += 1
+            logger.debug(f"时效过滤(无日期): [{r.get('brand_name','?')}] {r.get('title','')[:40]}")
+            continue
+
+        # ② 日期解析失败 → 丢弃
+        try:
+            pub_date = dt_date.fromisoformat(pub_str)
+        except (ValueError, TypeError):
+            nodate_count += 1
+            logger.debug(f"时效过滤(日期格式异常): [{r.get('brand_name','?')}] {pub_str}")
+            continue
+
+        # ③ 超过 7 天 → 丢弃
+        days_ago = (today - pub_date).days
+        if days_ago > 7:
+            stale_count += 1
+            logger.debug(f"时效过滤({days_ago}天前): [{r.get('brand_name','?')}] {r.get('title','')[:40]}")
+            continue
+
+        # ④ 未来日期 → 丢弃
+        if days_ago < 0:
+            logger.debug(f"时效过滤(未来日期): [{r.get('brand_name','?')}] {pub_str}")
+            continue
+
+        # ⑤ 标题中含旧年份 → 丢弃（搜索代理漏网之鱼）
+        title = r.get("title", "")
+        import re
+        if re.search(r'(202[0-4]年|201[0-9]年)', title):
+            oldyear_count += 1
+            logger.debug(f"时效过滤(旧年份): [{r.get('brand_name','?')}] {title[:40]}")
+            continue
+
         item = RawItem(
             source="AI搜索代理",
             url=r.get("url", ""),
-            title=r.get("title", ""),
+            title=title,
             content=r.get("summary", ""),
-            published_at=r.get("published_at", target_date),
+            published_at=pub_str,
             brand_name=r.get("brand_name", ""),
             brand_id=r.get("brand_id", ""),
             circle=r.get("circle", ""),
@@ -201,7 +251,14 @@ def _inject_external_searches(target_date: str) -> list:
 
     # 读取后删除，避免重复注入
     result_file.unlink()
-    logger.info(f"从 _search_results.json 注入 {len(items)} 条外部搜索结果（已删除源文件）")
+
+    filter_summary = []
+    if nodate_count: filter_summary.append(f"无日期{nodate_count}")
+    if stale_count: filter_summary.append(f"过期{stale_count}")
+    if oldyear_count: filter_summary.append(f"旧年份{oldyear_count}")
+    fs = "、".join(filter_summary) if filter_summary else "无过滤"
+
+    logger.info(f"从 _search_results.json 注入 {len(items)} 条结果（过滤: {fs}，原始 {len(data.get('results',[]))} 条）")
 
     return items
 
@@ -222,9 +279,15 @@ def _export_search_tasks(target_date: str) -> Path:
         "total_tasks": len(tasks),
         "tasks": tasks,
         "instruction": (
-            "对每个品牌的 query 执行 WebSearch，收集近 7 天的新闻动态。"
-            "每条结果需包含: brand_name, brand_id, circle, title, url, summary, published_at, category。"
-            "将结果写入 data/_search_results.json，格式见 _inject_external_searches 文档。"
+            "对每个品牌的 query 使用 WebSearch 执行搜索。每个 query 搜 3-5 条相关新闻。\n"
+            "⚠️ 时效要求（极其重要）：\n"
+            "  1. 只收录近 7 天内发布的新闻\n"
+            "  2. 每条结果必须包含 published_at 字段（YYYY-MM-DD 格式）\n"
+            "  3. 无法确定具体日期的内容不要收录\n"
+            "  4. 标题中含「2020年」「2021年」「2022年」「2023年」「2024年」等旧年份的新闻一律丢弃\n"
+            "  5. 用搜索工具的时间过滤参数（如 &tbs=qdr:w 或等价参数）确保只搜近一周\n"
+            "每条结果需包含: brand_name, brand_id, circle, title, url, summary, published_at(YYYY-MM-DD), category。\n"
+            "将结果写入 data/_search_results.json。"
         ),
     }, ensure_ascii=False, indent=2), encoding="utf-8")
 
